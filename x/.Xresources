@@ -1,5 +1,5 @@
 !! Font
-*.font: JetBrainsMono Nerd Font,Bold-10
+*.font: JetBrainsMonoNL Nerd Font,Bold-10
 
 !! Transparency
 *.alpha: 255

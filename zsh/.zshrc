@@ -1,3 +1,5 @@
+# === ZSHRC ===
+
 # PROMPT='%F{blue}%n%f@%F{white}%m%f %F{blue}%B%~%b%f '
 
 # The following lines were added by zsh-newuser-install

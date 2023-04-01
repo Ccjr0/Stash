@@ -1,10 +1,8 @@
-" ------------------
-" --- INIT.VIM --- |
-" ------------------
+" === INIT.VIM ===
 
-" ----------
+"-----------
 " SETTINGS |
-" ----------
+"-----------
 syntax enable
 syntax on
 
@@ -52,9 +50,9 @@ autocmd BufWritePre * %s/\s\+$//e
 " Run xrdb whenever Xdefaults or Xresources are updated
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 
-" ------
+"-------
 " MAPS |
-" -----
+"-------
 " Set the leader key
 let mapleader = ","
 
@@ -96,9 +94,9 @@ nnoremap <silent> <C-t> :tabnew<CR>
 " Disable operation
 noremap R <nop>
 
-" ---------
+"----------
 " PLUGINS |
-" ---------
+"----------
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vimwiki/vimwiki'
@@ -115,9 +113,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
 
-" -------------
+"--------------
 " STATUS LINE |
-" -------------
+"--------------
 set statusline=
 set statusline+=%#PmenuSel#
 set statusline+=%#LineNr#
