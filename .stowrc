@@ -1,0 +1,6 @@
+--target=~/
+--ignore=\.git
+--ignore=misc
+--ignore=^/LICENSE.*
+--ignore=^/README.*
+--ignore=^/.*\.org

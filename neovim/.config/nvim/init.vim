@@ -56,7 +56,7 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " MAPS |
 " -----
 " Set the leader key
-let mapleader = ";"
+let mapleader = ","
 
 " Easier splits
 nnoremap <leader>s <C-w>s
@@ -64,6 +64,10 @@ nnoremap <leader>v <C-w>v
 
 " Clear search query
 nnoremap \ :noh<Enter>
+
+" Workaround to delete word on Ctrl+BS in insert mode
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
 
 " Easier movement keys (splits)
 map <leader>h <C-w>h
@@ -89,6 +93,9 @@ nnoremap <C-s> :%s//g<Left><Left>
 " New tab
 nnoremap <silent> <C-t> :tabnew<CR>
 
+" Disable operation
+noremap R <nop>
+
 " ---------
 " PLUGINS |
 " ---------
@@ -96,7 +103,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'mfussenegger/nvim-dap'
-Plug 'vifm/vifm.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/goyo.vim'
@@ -105,6 +111,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Plug neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'preservim/nerdtree'
 " Plug 'easymotion/vim-easymotion'
+" Plug 'vifm/vifm.vim'
 
 call plug#end()
 

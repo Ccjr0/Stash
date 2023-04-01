@@ -1,5 +1,5 @@
 !! Font
-*.font: Tamzen-12
+*.font: JetBrainsMono Nerd Font,Bold-10
 
 !! Transparency
 *.alpha: 255

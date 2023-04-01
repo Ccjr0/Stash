@@ -110,8 +110,13 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark b ~/bin/
+mark r /
 mark h ~/
+mark d ~/Documents
+mark m ~/Music
+mark p ~/Pictures
+mark v ~/Videos
+mark w ~/Wiki
 
 " ------------------------------------------------------------------------------
 " Commands
@@ -138,7 +143,7 @@ command! diff vim -d %f %F
 command! zip zip -r %c.zip %f
 command! run !! ./%f
 command! make !!make %a
-command! mkcd :mkdir %a | cd %a
+" command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart full
 
