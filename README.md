@@ -1,3 +1,5 @@
-### Crispy's stash of goodies.
+```
+Crispy's stash of files
 
-```cd``` into, and then use ```stow */```
+(dotfiles use GNU stow)
+```
