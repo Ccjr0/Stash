@@ -1,3 +1,2 @@
-Crispy's stash of files. Meant for EZ deploy
-
-- dotfiles use GNU stow. To use, cd into dotfiles and "stow *"
+Crispy's stash of files
+Meant for ez deploy
