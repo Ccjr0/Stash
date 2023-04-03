@@ -97,7 +97,7 @@ nnoremap <silent> <C-t> :tabnew<CR>
 "==========
 " PLUGINS |
 "==========
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'mfussenegger/nvim-dap'
