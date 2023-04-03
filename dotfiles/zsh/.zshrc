@@ -45,10 +45,10 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 #==========
 # SOURCES |
 #==========
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/gitstatus/gitstatus.prompt.zsh
-source ~/.zsh/vi-mode/vi-mode.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/gitstatus/gitstatus.prompt.zsh
+source ~/.config/zsh/vi-mode/vi-mode.zsh
 
 #==========
 # ALIASES |
