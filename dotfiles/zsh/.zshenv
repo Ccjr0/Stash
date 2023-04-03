@@ -45,7 +45,7 @@ export NNN_SSHFS="sshfs -o follow_symlinks"
 export NNN_COLORS="2136"
 
 ## --- Use a different color for folders
-export NNN_FCOLORS="0000E6310000000000000000"
+export NNN_FCOLORS="0000E6310000C10000000000"
 
 ## --- trash (needs trash-cli) instead of delete
 export NNN_TRASH=1
