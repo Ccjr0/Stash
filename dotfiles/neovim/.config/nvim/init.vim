@@ -97,7 +97,7 @@ nnoremap <silent> <C-t> :tabnew<CR>
 "==========
 " PLUGINS |
 "==========
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'mfussenegger/nvim-dap'
@@ -110,6 +110,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 " Plug 'preservim/nerdtree'
 " Plug 'easymotion/vim-easymotion'
 " Plug 'vifm/vifm.vim'
+" Plug 'mcchrish/nnn'
 
 call plug#end()
 
