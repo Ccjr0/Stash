@@ -1,0 +1,4 @@
+dotfiles managed with GNU stow.
+
+Usage:
+    stow *

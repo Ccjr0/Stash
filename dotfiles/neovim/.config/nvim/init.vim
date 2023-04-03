@@ -54,11 +54,11 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " MAPS |
 "=======
 "" --- Set the leader key
-let mapleader = ","
+let mapleader = "f"
 
 "" --- Easier splits
-nnoremap <leader>s <C-w>s
-nnoremap <leader>v <C-w>v
+nnoremap <C-s> <C-w>s
+nnoremap <C-x> <C-w>v
 
 "" --- Clear search query
 nnoremap \ :noh<Enter>
@@ -68,10 +68,10 @@ noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 "" --- Easier movement keys (splits)
-map <leader>h <C-w>h
-map <leader>j <C-w>j
-map <leader>k <C-w>k
-map <leader>l <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 "" --- Easier movement keys (normal)
 nnoremap K gk
@@ -86,13 +86,16 @@ vnoremap H h
 vnoremap L l
 
 "" --- Global search/replace
-nnoremap <C-s> :%s//g<Left><Left>
+nnoremap gS :%s//g<Left><Left>
 
 "" --- New tab
 nnoremap <silent> <C-t> :tabnew<CR>
 
 "" --- Disable operation
 " noremap R <nop>
+noremap f <nop>
+noremap F <nop>
+nnoremap <C-z> <nop>
 
 "==========
 " PLUGINS |
@@ -106,11 +109,11 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/goyo.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'mcchrish/nnn.vim'
+" Plug 'vifm/vifm.vim'
 " Plug neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'preservim/nerdtree'
 " Plug 'easymotion/vim-easymotion'
-" Plug 'vifm/vifm.vim'
-" Plug 'mcchrish/nnn'
 
 call plug#end()
 

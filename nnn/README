@@ -1,0 +1,7 @@
+Custom nnn build (nothing crazy).
+
+Installation:
+    sudo make O_NERD=1 install
+
+Uninstallation:
+    sudo make uninstall
