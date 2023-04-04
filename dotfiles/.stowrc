@@ -1,2 +1,4 @@
 --target=$HOME
---ignore=README
+--ignore=\.git
+--ignore=misc
+--ignore=LICENSE

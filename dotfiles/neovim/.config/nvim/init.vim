@@ -38,7 +38,7 @@ set iskeyword+=-
 "" --- Disable vim swap creation
 set noswapfile
 
-"" --- Disable automatic comment insertion
+"" --- Disable automatic comment insertion on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 "" --- Automatically deletes all trailing whitespace on save
@@ -54,24 +54,24 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 " MAPS |
 "=======
 "" --- Set the leader key
-let mapleader = "f"
+let mapleader = ";"
 
 "" --- Easier splits
-nnoremap <C-s> <C-w>s
-nnoremap <C-x> <C-w>v
+" nnoremap <C-s> <C-w>s
+" nnoremap <C-x> <C-w>v
 
 "" --- Clear search query
-nnoremap \ :noh<Enter>
+nnoremap <silent> \ :noh<Enter>
 
 "" --- Workaround to delete word on Ctrl+BS in insert mode
 noremap! <C-BS> <C-w>
 noremap! <C-h> <C-w>
 
 "" --- Easier movement keys (splits)
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "" --- Easier movement keys (normal)
 nnoremap K gk
@@ -86,52 +86,73 @@ vnoremap H h
 vnoremap L l
 
 "" --- Global search/replace
-nnoremap gS :%s//g<Left><Left>
+nnoremap <C-s> :%s//g<Left><Left>
 
 "" --- New tab
 nnoremap <silent> <C-t> :tabnew<CR>
 
 "" --- Disable operation
-" noremap R <nop>
+noremap R <nop>
 noremap f <nop>
 noremap F <nop>
 nnoremap <C-z> <nop>
 
-"==========
-" PLUGINS |
-"==========
+"" --- Smart-splits plugin bindings
+nnoremap <silent> <C-A-h> :SmartResizeLeft<Enter>
+nnoremap <silent> <C-A-j> :SmartResizeDown<Enter>
+nnoremap <silent> <C-A-k> :SmartResizeUp<Enter>
+nnoremap <silent> <C-A-l> :SmartResizeRight<Enter>
+
+" nnoremap <silent> <C-h> :SmartCursorMoveLeft<Enter>
+" nnoremap <silent> <C-j> :SmartCursorMoveDown<Enter>
+" nnoremap <silent> <C-k> :SmartCursorMoveUp<Enter>
+" nnoremap <silent> <C-l> :SmartCursorMoveRight<Enter>
+
+"===========
+" VIM-PLUG |
+"===========
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'mfussenegger/nvim-dap'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'junegunn/goyo.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mcchrish/nnn.vim'
-" Plug 'vifm/vifm.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mrjones2014/smart-splits.nvim'
 " Plug neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'preservim/nerdtree'
+" Plug 'tpope/vim-surround'
 " Plug 'easymotion/vim-easymotion'
+" Plug 'junegunn/goyo.vim'
+" Plug 'vifm/vifm.vim'
 
 call plug#end()
 
 "==============
 " STATUS LINE |
 "==============
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
+" set statusline=
+" set statusline+=%#PmenuSel#
+" set statusline+=%#LineNr#
+" set statusline+=\ %f
+" set statusline+=%m\
+" set statusline+=%=
+" set statusline+=%#CursorColumn#
+" set statusline+=\ %y
 " set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 " set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\
+" set statusline+=\ %p%%
+" set statusline+=\ %l:%c
+" set statusline+=\
+
+"==========
+" AIRLINE |
+"==========
+let g:airline_theme='distinguished'
+
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE

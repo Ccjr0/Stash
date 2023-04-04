@@ -56,35 +56,39 @@ source ~/.config/zsh/vi-mode/vi-mode.zsh
 ## --- 'sudo' alias fix
 alias sudo='nocorrect sudo -E '
 
-alias cp="cp -i"                                                # Confirm before overwriting something
-alias df='df -h'                                                # Human-readable sizes
-alias free='free -m'                                            # Show sizes in MB
+alias cp="cp -i" ## Confirm before overwriting something
+alias rm='rm -i' ## Confirm before removing something
+alias df='df -h' ## Human-readable sizes
+alias free='free -m' ## Show sizes in MB
+
 alias ls='ls --color=auto --group-directories-first'
 alias la='ls -A --color=auto --group-directories-first'
 alias ll='ls -alF --color=auto --group-directories-first'
+
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias mkdir='mkdir -p'
-alias vim='nvim'
-# alias fm='vifm'
-alias mp='ncmpcpp'
 
-## --- Convenience
+alias mkdir='mkdir -p' ## Make parent dirs as needed
+
+alias vi='nvim'
+alias vim='nvim'
+alias mp='ncmpcpp'
 alias gitup='git add . && git commit && git push'
 alias syu='yay -Syu'
-alias rns='sudo pacman -Rns'
 alias ytmp3='youtube-dl -x --audio-format mp3'
+alias n3='nnn'
+alias sn3='sudo nnn'
+
 # alias xup='xrdb ~/.Xresources'
 # alias ls='exa --icons --group-directories-first'
 # alias la='exa --icons -a --group-directories-first'
 # alias ll='exa --icons -alF --group-directories-first'
-alias n3='nnn -A -Q -R -e -r'
-alias sn3='sudo nnn -A -Q -R -e -r'
 # alias zdup='sudo zypper dup'
 # alias dnfup='sudo dnf update'
 # alias aptup='sudo apt update && sudo apt upgrade'
 # alias aptremove='sudo apt autoremove'
+# alias fm='vifm'
 
 ## --- Typo aliases
 # alias claer='clear'
@@ -110,3 +114,6 @@ alias sn3='sudo nnn -A -Q -R -e -r'
 # alias rebot='reboot'
 # alias reboto='reboot'
 
+alias clear='echo "
+TRY USING CONTROL+L !!
+"'

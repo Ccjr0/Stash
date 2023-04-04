@@ -12,7 +12,7 @@
 # EXPORT |
 #=========
 export EDITOR="nvim"
-# export TERMINAL="st"
+export TERMINAL="st"
 export VISUAL="nvim"
 export PAGER="less"
 export READER="zathura"
@@ -33,32 +33,16 @@ export LESS_TERMCAP_us=$'\E[01;36m'
 #======
 # NNN |
 #======
-export NNN_PLUG=
-
-## --- Use default editor when opening files
-export NNN_USE_EDITOR=1
-
-## --- Make sshfs follow symlinks on the remote
-export NNN_SSHFS="sshfs -o follow_symlinks"
-
-## --- Use a different color for each context
-export NNN_COLORS="2136"
-
-## --- Use a different color for folders
-export NNN_FCOLORS="0000E6310000C10000000000"
-
-## --- trash (needs trash-cli) instead of delete
-export NNN_TRASH=1
-
-## --- Sort hidden files first (NNN)
-export LC_COLLATE="C"
-
-export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$" # bsdtar can extract, list and archivemount can mount ISO 9660 cdrom images (extn: iso).
-
 export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-
-## --- set temp file
-# set --export NNN_FIFO "/tmp/nnn.fifo"
+export NNN_OPTS="AQRer"
+export NNN_USE_EDITOR=1 ## Use default editor when opening files
+export NNN_SSHFS="sshfs -o follow_symlinks" ## Make sshfs follow symlinks on the remote
+export NNN_COLORS="2136" ## Use a different color for each context
+export NNN_FCOLORS="0000E6310000C10000000000" ## Use a different color for folders
+export NNN_TRASH=1 ## trash (needs trash-cli) instead of delete
+export LC_COLLATE="C" ## Sort hidden files first
+export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$" # bsdtar can extract, list and archivemount can mount ISO 9660 cdrom images (extn: iso).
+# set --export NNN_FIFO "/tmp/nnn.fifo" ## Set temp file
 
 #=========
 # PYTHON |

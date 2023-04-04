@@ -1,1 +1,8 @@
-Crispy's stash of files.
+Crispy's stash of files
+-----------------------
+
+dotfiles managed with stow
+
+USAGE:
+    cd dotfiles
+    stow *

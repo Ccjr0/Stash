@@ -51,5 +51,8 @@ fi
 # Swap caps with escape
 setxkbmap -option caps:escape &
 
+# Set repeat keys
+xset r rate 250 60
+
 # Execute dwm
 exec dwm

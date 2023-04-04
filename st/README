@@ -1,4 +1,5 @@
-based st (forked from Luke's).
+based st (forked from Luke's)
+-----------------------------
 
 Installation:
     sudo make install
