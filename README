@@ -1,7 +1,7 @@
 Crispy's stash of files
 -----------------------
 
-dotfiles managed with stow
+dotfiles managed with GNU stow
 
 USAGE:
     cd dotfiles

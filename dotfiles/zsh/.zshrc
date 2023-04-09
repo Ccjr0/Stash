@@ -1,9 +1,9 @@
-# === ZSHRC === #
+## zshrc
 
 # PROMPT='%F{blue}%n%f@%F{white}%m%f %F{blue}%B%~%b%f '
 
 ## --- The following lines were added by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=$HOME/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt autocd extendedglob nomatch
@@ -45,10 +45,15 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 #==========
 # SOURCES |
 #==========
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.config/zsh/gitstatus/gitstatus.prompt.zsh
+## --- Local sources
+source ~/.config/zsh/gitstatus/gitstatus.prompt.zsh ## romkatv/gitstatus
 source ~/.config/zsh/vi-mode/vi-mode.zsh
+# source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## --- Package sources
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 #==========
 # ALIASES |
@@ -73,12 +78,14 @@ alias mkdir='mkdir -p' ## Make parent dirs as needed
 
 alias vi='nvim'
 alias vim='nvim'
+alias em='emacs'
 alias mp='ncmpcpp'
 alias gitup='git add . && git commit && git push'
 alias syu='yay -Syu'
 alias ytmp3='youtube-dl -x --audio-format mp3'
 alias n3='nnn'
-alias sn3='sudo nnn'
+alias wttr='curl wttr.in'
+alias todo='cat ~/Documents/TODO'
 
 # alias xup='xrdb ~/.Xresources'
 # alias ls='exa --icons --group-directories-first'
@@ -114,6 +121,7 @@ alias sn3='sudo nnn'
 # alias rebot='reboot'
 # alias reboto='reboot'
 
-alias clear='echo "
-TRY USING CONTROL+L !!
-"'
+# alias clear='echo "
+# TRY USING CONTROL+L !!
+# "'
+

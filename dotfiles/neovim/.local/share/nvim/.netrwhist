@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/ccjr/Nextcloud'
+let g:netrw_dirhist_7='/home/ccjr/Downloads'
+let g:netrw_dirhist_6='/home/ccjr'
+let g:netrw_dirhist_5='/home/ccjr/.gnupg'
+let g:netrw_dirhist_4='/home/ccjr'
 let g:netrw_dirhist_3='/home/ccjr/.config/nnn/bookmarks/Home'
 let g:netrw_dirhist_2='/home/ccjr/.config/nnn/bookmarks/Documents'
 let g:netrw_dirhist_1='/opt/FreeTube'

@@ -159,21 +159,22 @@ static struct key bindings[] = {
 	{ KEY_END,        SEL_END },
 	{ 'G',            SEL_END },
 	/* Go to first file */
-	{ '\'',           SEL_FIRST },
+	/* { '\'',           SEL_FIRST }, */
 	/* Jump to an entry number/offset */
-	{ 'J',            SEL_JUMP },
+	/* { 'J',            SEL_JUMP }, */
 	/* HOME */
 	{ CONTROL('H'),   SEL_CDHOME },
+    { '~',            SEL_CDHOME },
 	/* Initial directory */
 	{ '@',            SEL_CDBEGIN },
 	/* Last visited dir */
 	{ '-',            SEL_CDLAST },
 	/* Go to / */
-	{ CONTROL('_'),   SEL_CDROOT },
+	{ '`',            SEL_CDROOT },
 	/* Leader key */
 	{ 'b',            SEL_BMOPEN },
 	/* Connect to server over SSHFS */
-	{ CONTROL('C'),   SEL_REMOTE },
+	{ 'c',            SEL_REMOTE },
 	/* Cycle contexts in forward direction */
 	{ '\t',           SEL_CYCLE },
 	/* Cycle contexts in reverse direction */
@@ -190,7 +191,7 @@ static struct key bindings[] = {
 	{ '8',            SEL_CTX8 },
 #endif
 	/* Mark a path to visit later */
-	/* { ',',            SEL_MARK }, */
+	{ ',',            SEL_MARK },
 	/* Create a bookmark */
 	{ 'B',            SEL_BMARK },
 	/* Filter */
@@ -200,7 +201,7 @@ static struct key bindings[] = {
 	/* Toggle hide .dot files */
 	{ '.',            SEL_HIDDEN },
 	/* Detailed listing */
-	{ 'D',            SEL_DETAIL },
+	{ 'i',            SEL_DETAIL },
 	/* Toggle executable status */
 	{ '*',            SEL_CHMODX },
 	/* Create archive */
@@ -218,7 +219,7 @@ static struct key bindings[] = {
 	/* Select all files in current dir */
 	{ 'V',            SEL_SELALL },
 	/* Invert selection in current dir */
-	{ 'i',            SEL_SELINV },
+	{ CONTROL('V'),   SEL_SELINV },
 	/* List, edit selection */
 	{ 'E',            SEL_SELEDIT },
 	/* Copy from selection buffer */
@@ -242,7 +243,7 @@ static struct key bindings[] = {
 	/* Show help */
 	{ '?',            SEL_HELP },
 	/* Toggle auto-advance on file open */
-	/* { CONTROL('J'),   SEL_AUTONEXT }, */
+	{ CONTROL('J'),   SEL_AUTONEXT },
 	/* Edit in EDITOR */
 	{ 'e',            SEL_EDIT },
 	/* Run a plugin */
@@ -255,7 +256,7 @@ static struct key bindings[] = {
 	/* Launcher */
 	{ '=',            SEL_LAUNCH },
 	/* Show command prompt */
-	/* { ']',            SEL_PROMPT }, */
+	{ ']',            SEL_PROMPT },
 	/* Lock screen */
 	/* { '0',            SEL_LOCK }, */
 	/* Manage sessions */

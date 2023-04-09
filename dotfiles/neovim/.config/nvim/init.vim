@@ -1,4 +1,4 @@
-" === INIT.VIM ===
+"" init.vim
 
 "===========
 " SETTINGS |
@@ -11,9 +11,10 @@ set hidden
 "" --- Smart wrap
 set linebreak
 
-"" --- Save confirmation
+"" --- Save/quit confirmation
 set confirm
 
+"" --- Tab settings
 set shiftwidth=4
 set autoindent
 set tabstop=4
@@ -60,18 +61,21 @@ let mapleader = ";"
 " nnoremap <C-s> <C-w>s
 " nnoremap <C-x> <C-w>v
 
+"" --- Easier quit
+nnoremap <silent> <C-q> :q<Enter>
+
 "" --- Clear search query
-nnoremap <silent> \ :noh<Enter>
+nnoremap <silent> <C-_> :noh<Enter>
 
 "" --- Workaround to delete word on Ctrl+BS in insert mode
-noremap! <C-BS> <C-w>
-noremap! <C-h> <C-w>
+" noremap! <C-BS> <C-w>
+" noremap! <C-h> <C-w>
 
 "" --- Easier movement keys (splits)
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 "" --- Easier movement keys (normal)
 nnoremap K gk
@@ -85,16 +89,16 @@ vnoremap J gj
 vnoremap H h
 vnoremap L l
 
-"" --- Global search/replace
+"" --- Global search/replace shortcut
 nnoremap <C-s> :%s//g<Left><Left>
+
+"" --- Visual search/replace shortcut
+vnoremap <C-s> :s//g<Left><Left>
 
 "" --- New tab
 nnoremap <silent> <C-t> :tabnew<CR>
 
 "" --- Disable operation
-noremap R <nop>
-noremap f <nop>
-noremap F <nop>
 nnoremap <C-z> <nop>
 
 "" --- Smart-splits plugin bindings
@@ -103,10 +107,10 @@ nnoremap <silent> <C-A-j> :SmartResizeDown<Enter>
 nnoremap <silent> <C-A-k> :SmartResizeUp<Enter>
 nnoremap <silent> <C-A-l> :SmartResizeRight<Enter>
 
-" nnoremap <silent> <C-h> :SmartCursorMoveLeft<Enter>
-" nnoremap <silent> <C-j> :SmartCursorMoveDown<Enter>
-" nnoremap <silent> <C-k> :SmartCursorMoveUp<Enter>
-" nnoremap <silent> <C-l> :SmartCursorMoveRight<Enter>
+nnoremap <silent> <C-h> :SmartCursorMoveLeft<Enter>
+nnoremap <silent> <C-j> :SmartCursorMoveDown<Enter>
+nnoremap <silent> <C-k> :SmartCursorMoveUp<Enter>
+nnoremap <silent> <C-l> :SmartCursorMoveRight<Enter>
 
 "===========
 " VIM-PLUG |
@@ -114,21 +118,25 @@ nnoremap <silent> <C-A-l> :SmartResizeRight<Enter>
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vimwiki/vimwiki'
-Plug 'mfussenegger/nvim-dap'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'mcchrish/nnn.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mrjones2014/smart-splits.nvim'
-" Plug neoclide/coc.nvim', {'branch': 'release'}
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ap/vim-css-color'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'mfussenegger/nvim-dap'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+" Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'preservim/nerdtree'
-" Plug 'tpope/vim-surround'
 " Plug 'easymotion/vim-easymotion'
 " Plug 'junegunn/goyo.vim'
 " Plug 'vifm/vifm.vim'
+" Plug 'haorenW1025/floatLf-nvim'
 
 call plug#end()
 
@@ -154,5 +162,9 @@ call plug#end()
 "==========
 let g:airline_theme='distinguished'
 
+"==========
+" NNN.VIM |
+"==========
+let $NNN_TRASH=1
 
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
