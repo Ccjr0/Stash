@@ -1,4 +1,4 @@
--- init.lua
+-- options.lua
 -- :help options
 
 ---- Backup/swap file options

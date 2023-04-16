@@ -1,8 +1,0 @@
-based st (forked from Luke's)
------------------------------
-
-Installation:
-    sudo make install
-
-Uninstallation:
-    sudo make uninstall

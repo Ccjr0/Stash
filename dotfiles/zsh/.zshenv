@@ -8,12 +8,14 @@
 #     export SSH_AUTH_SOCK
 # fi
 
-#=========
-# EXPORT |
-#=========
+#===================
+# ENVIRONMENT VARS |
+#===================
 export LANG=en_US.UTF-8
 
+export SHELL=/bin/zsh
 export OPENER="xdg-open"
+export BROWSER="brave"
 export EDITOR="nvim"
 export TERMINAL="st"
 export VISUAL="nvim"
@@ -52,5 +54,5 @@ export NNN_FCOLORS="000075310000730000000000" ## Set colors for folders and file
 #=========
 # PYTHON |
 #=========
-# export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 

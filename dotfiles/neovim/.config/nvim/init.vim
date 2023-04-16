@@ -3,41 +3,42 @@
 "===========
 " SETTINGS |
 "===========
+set nocompatible
+
+"" --- Syntax settings
 syntax enable
 syntax on
 
 set hidden
+set confirm ""  Save/quit confirmation
+set encoding=utf-8 "" Set encoding
 
-"" --- Smart wrap
-set linebreak
+"" --- Visual settings
+set termguicolors
+set number "" Display line numbers
+set linebreak "" Smart wrap
+set cursorline "" Show cursor line
+set scrolloff=4
+set sidescrolloff=4
 
-"" --- Save/quit confirmation
-set confirm
-
-"" --- Tab settings
+"" --- Indentation settings
 set shiftwidth=4
 set autoindent
 set tabstop=4
 set softtabstop=4
 set expandtab
 
-"" --- Case insensitive search, smartcase
-set ignorecase
-set smartcase
+set ignorecase "" Case insensitive search
+set smartcase "" Smartcase search
 
-set encoding=utf-8
+set splitbelow splitright "" Set split directions
 
-"" --- Display line numbers
-set number
-
-"" --- Set split directions
-set splitbelow splitright
-
+"" --- Set clipboard settings
 set clipboard=unnamedplus
 set iskeyword+=-
 
-"" --- Disable vim swap creation
-set noswapfile
+set noswapfile "" Disable vim swapfile creation
+set undofile "" Enable persistent undo
 
 "" --- Disable automatic comment insertion on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -57,19 +58,11 @@ autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 "" --- Set the leader key
 let mapleader = ";"
 
-"" --- Easier splits
-" nnoremap <C-s> <C-w>s
-" nnoremap <C-x> <C-w>v
-
-"" --- Easier quit
-nnoremap <silent> <C-q> :q<Enter>
+"" --- Easier close
+nnoremap <silent> <C-c> <C-w>c
 
 "" --- Clear search query
-nnoremap <silent> <C-_> :noh<Enter>
-
-"" --- Workaround to delete word on Ctrl+BS in insert mode
-" noremap! <C-BS> <C-w>
-" noremap! <C-h> <C-w>
+nnoremap <silent> <C-_> :noh<CR>
 
 "" --- Easier movement keys (splits)
 " nnoremap <C-h> <C-w>h
@@ -89,10 +82,15 @@ vnoremap J gj
 vnoremap H h
 vnoremap L l
 
-"" --- Global search/replace shortcut
-nnoremap <C-s> :%s//g<Left><Left>
+"" --- Stay in indent mode
+vnoremap < <gv
+vnoremap > >gv
 
-"" --- Visual search/replace shortcut
+"" --- Keep yank
+vnoremap p _dP
+
+"" --- Search/replace shortcuts
+nnoremap <C-s> :%s//g<Left><Left>
 vnoremap <C-s> :s//g<Left><Left>
 
 "" --- New tab
@@ -100,17 +98,18 @@ nnoremap <silent> <C-t> :tabnew<CR>
 
 "" --- Disable operation
 nnoremap <C-z> <nop>
+nnoremap <C-q> <nop>
 
-"" --- Smart-splits plugin bindings
-nnoremap <silent> <C-A-h> :SmartResizeLeft<Enter>
-nnoremap <silent> <C-A-j> :SmartResizeDown<Enter>
-nnoremap <silent> <C-A-k> :SmartResizeUp<Enter>
-nnoremap <silent> <C-A-l> :SmartResizeRight<Enter>
+"" --- Smart-splits bindings
+nnoremap <silent> <C-A-h> :SmartResizeLeft<CR>
+nnoremap <silent> <C-A-j> :SmartResizeDown<CR>
+nnoremap <silent> <C-A-k> :SmartResizeUp<CR>
+nnoremap <silent> <C-A-l> :SmartResizeRight<CR>
 
-nnoremap <silent> <C-h> :SmartCursorMoveLeft<Enter>
-nnoremap <silent> <C-j> :SmartCursorMoveDown<Enter>
-nnoremap <silent> <C-k> :SmartCursorMoveUp<Enter>
-nnoremap <silent> <C-l> :SmartCursorMoveRight<Enter>
+nnoremap <silent> <C-h> :SmartCursorMoveLeft<CR>
+nnoremap <silent> <C-j> :SmartCursorMoveDown<CR>
+nnoremap <silent> <C-k> :SmartCursorMoveUp<CR>
+nnoremap <silent> <C-l> :SmartCursorMoveRight<CR>
 
 "===========
 " VIM-PLUG |
@@ -161,6 +160,11 @@ call plug#end()
 " AIRLINE |
 "==========
 let g:airline_theme='distinguished'
+
+"==========
+" VIMWIKI |
+"==========
+let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki/'}]
 
 "==========
 " NNN.VIM |

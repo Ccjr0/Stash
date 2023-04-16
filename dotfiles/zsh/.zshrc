@@ -66,13 +66,14 @@ alias rm='rm -i' ## Confirm before removing something
 alias df='df -h' ## Human-readable sizes
 alias free='free -m' ## Show sizes in MB
 
-alias ls='ls --color=auto --group-directories-first'
-alias la='ls -A --color=auto --group-directories-first'
-alias ll='ls -alF --color=auto --group-directories-first'
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+
+alias ls='lsd --group-dirs=first'
+alias la='lsd -A --group-dirs=first'
+alias ll='lsd -AlF --group-dirs=first'
 
 alias mkdir='mkdir -p' ## Make parent dirs as needed
 
@@ -81,13 +82,15 @@ alias vim='nvim'
 alias em='emacs'
 alias mp='ncmpcpp'
 alias gitup='git add . && git commit && git push'
-alias syu='yay -Syu'
-alias ytmp3='youtube-dl -x --audio-format mp3'
+alias ytdla='youtube-dl --add-metadata -x --audio-format mp3'
 alias n3='nnn'
 alias wttr='curl wttr.in'
-alias todo='cat ~/Documents/TODO'
+alias todo='cat ~/Documents/TODO | cowsay'
 
 # alias xup='xrdb ~/.Xresources'
+# alias ls='ls --color=auto --group-directories-first'
+# alias la='ls -A --color=auto --group-directories-first'
+# alias ll='ls -alF --color=auto --group-directories-first'
 # alias ls='exa --icons --group-directories-first'
 # alias la='exa --icons -a --group-directories-first'
 # alias ll='exa --icons -alF --group-directories-first'
@@ -96,32 +99,5 @@ alias todo='cat ~/Documents/TODO'
 # alias aptup='sudo apt update && sudo apt upgrade'
 # alias aptremove='sudo apt autoremove'
 # alias fm='vifm'
-
-## --- Typo aliases
-# alias claer='clear'
-# alias cealr='clear'
-# alias clare='clear'
-# alias clea='clear'
-# alias cler='clear'
-# alias clar='clear'
-# alias celar='clear'
-# alias cela='clear'
-# alias clera='clear'
-# alias eixt='exit'
-# alias exti='exit'
-# alias usdo='sudo'
-# alias sduo='sudo'
-# alias sdou='sudo'
-# alias sduo='sudo'
-# alias pamcn='pacman'
-# alias pamcan='pacman'
-# alias pacmn='pacman'
-# alias pacma='pacman'
-# alias noefetch='neofetch'
-# alias rebot='reboot'
-# alias reboto='reboot'
-
-# alias clear='echo "
-# TRY USING CONTROL+L !!
-# "'
+# alias clear='cowsay TRY USING CONTROL+L !!'
 
