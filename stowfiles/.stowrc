@@ -1,0 +1,10 @@
+# stowrc
+
+--target=$HOME
+
+--ignore=\.git
+--ignore=\.gitignore
+--ignore=\.ignore
+--ignore=misc
+--ignore=LICENSE
+

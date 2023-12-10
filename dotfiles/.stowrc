@@ -1,5 +1,0 @@
---target=$HOME
---ignore=\.git
---ignore=\.ignore
---ignore=misc
---ignore=LICENSE

@@ -1,0 +1,48 @@
+#define bg          #050505
+#define fg          #f0f0f0
+#define black       #0f0f0f
+#define red         #AC8A8C
+#define green       #8AAC8B
+#define yellow      #ACA98A
+#define blue        #8F8AAC
+#define magenta     #AC8AAC
+#define cyan        #8AABAC
+#define white       #f0f0f0
+
+! special
+*.foreground:   fg
+*.background:   bg
+*.cursorColor:  white
+
+! black
+*.color0:       black
+*.color8:       #5a5a5a
+
+! red
+*.color1:       red
+*.color9:       red
+
+! green
+*.color2:       green
+*.color10:      green
+
+! yellow
+*.color3:       yellow
+*.color11:      yellow
+
+! blue
+*.color4:       blue
+*.color12:      blue
+
+! magenta
+*.color5:       magenta
+*.color13:      magenta
+
+! cyan
+*.color6:       cyan
+*.color14:      cyan
+
+! white
+*.color7:       white
+*.color15:      white
+
