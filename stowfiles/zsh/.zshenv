@@ -1,8 +1,8 @@
 # zshenv
 
-#===================
-#    BASIC VARS    |
-#===================
+################
+#  BASIC VARS  #
+################
 export LANG=en_US.UTF-8
 export PATH="${PATH}:/home/ccjr/bin"
 export PATH="$HOME/.local/bin:$PATH"
@@ -37,9 +37,9 @@ export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 #     export SSH_AUTH_SOCK
 # fi
 
-#============
-#    NNN    |
-#============
+#########
+#  NNN  #
+#########
 # ## --- NNN settings
 # export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 # export NNN_OPTS="AQRd" ## Use binary options

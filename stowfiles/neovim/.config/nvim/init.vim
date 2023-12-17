@@ -1,8 +1,8 @@
 " init.vim
 
-"=============
-"  SETTINGS  |
-"=============
+""""""""""""""
+"  SETTINGS  "
+""""""""""""""
 set hidden
 set confirm
 set mouse=a
@@ -29,9 +29,9 @@ set laststatus=2
 set undofile
 set nocompatible
 
-"=============
-"  COMMANDS  |
-"=============
+""""""""""""""
+"  COMMANDS  "
+""""""""""""""
 autocmd BufRead,BufNewFile *.tex set filetype=tex
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
@@ -47,9 +47,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " When shortcuts files are updated, renew zsh and vifm configs with new material
 " autocmd BufWritePost * %s/\s\+%//e
 
-"===================
-"  BASIC MAPPINGS  |
-"===================
+""""""""""""""""""""
+"  BASIC MAPPINGS  "
+""""""""""""""""""""
 let mapleader = ";"
 
 "" --- Easier movement keys (normal)
@@ -109,9 +109,9 @@ nnoremap M <nop>
 "" --- Check spelling
 nnoremap gs :setlocal spell! spelllang=en_us<CR>
 
-"============
-"  PLUGINS  |
-"============
+"""""""""""""
+"  PLUGINS  "
+"""""""""""""
 "" --- Plugins to install
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -137,9 +137,9 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-"====================
-"  PLUGIN SETTINGS  |
-"====================
+"""""""""""""""""""""
+"  PLUGIN SETTINGS  "
+"""""""""""""""""""""
 "" --- Startify
 map <silent> <leader>s :Startify<CR>
 

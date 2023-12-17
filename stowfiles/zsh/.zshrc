@@ -1,8 +1,8 @@
 # zshrc
 
-#===========
-#  PROMPT  |
-#===========
+############
+#  PROMPT  #
+############
 autoload -Uz vcs_info
 autoload -U colors && colors
 
@@ -28,9 +28,9 @@ zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]
 PROMPT=' %F{blue}%B%~%b%f %F{gray}%B>>%f%b'
 PROMPT+="%B\$vcs_info_msg_0_%b "
 
-#============
-#  OPTIONS  |
-#============
+#############
+#  OPTIONS  #
+#############
 setopt autocd extendedglob nomatch histignorealldups
 
 ## --- History
@@ -38,9 +38,9 @@ HISTFILE=$HOME/.histfile
 HISTSIZE=50000
 SAVEHIST=50000
 
-#===============
-#  COMPLETION  |
-#===============
+################
+#  COMPLETION  #
+################
 zstyle :compinstall filename '/home/ccjr/.zshrc'
 autoload -Uz compinit
 compinit
@@ -62,9 +62,9 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-#============
-#  ALIASES  |
-#============
+#############
+#  ALIASES  #
+#############
 alias sudo='nocorrect sudo -E '     # 'sudo' alias fix
 
 alias cp="cp -i"        # Confirm before overwriting something
@@ -85,7 +85,7 @@ alias ytdlp='yt-dlp --embed-metadata'
 alias ytdlpa='yt-dlp --embed-metadata -x --audio-format mp3'
 alias gitup='git add . && git commit && git push'
 alias wttr='curl wttr.in'
-alias todo='cat ~/Documents/notes/TODO.md | cowsay'
+alias todo='cat ~/Documents/TODO.md | cowsay'
 
 # alias n3='nnn'
 # alias em='emacs'
@@ -100,9 +100,9 @@ alias todo='cat ~/Documents/notes/TODO.md | cowsay'
 # alias ytdl='youtube-dl'
 # alias ytdla='youtube-dl --add-metadata -x --audio-format mp3'
 
-#============
-#  PLUGINS  |
-#============
+#############
+#  PLUGINS  #
+#############
 ## --- vi-mode
 source ~/.config/zsh/vi-mode/vi-mode.zsh
 
