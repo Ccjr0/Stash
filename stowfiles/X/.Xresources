@@ -2,53 +2,42 @@
 
 !! --- Theme
 #include ".config/xrdb/apprentice.xrdb"
-XTerm.termName: xterm-256color
-
-!! --- Font
-/* *.font: JetBrainsMonoNL NF-10:antialias=true:autohint=true */
-
-XTerm*faceName: JetBrainsMonoNL NF
-XTerm*faceSize: 10
-
-!! --- Locale
-XTerm.vt100.locale: true
-
-!! --- Selection
-XTerm*highlightSelection: true
-XTerm*trimSelection: true
-
-!! --- Scrolling
-XTerm*saveLines: 16384
-XTerm*scrollTtyOutput: false
-
-
-
-
-
-!! --- Disable fullscreen
-XTerm*fullscreen: never
-
-!! --- Enable ALT
-XTerm*metaSendsEscape: true
-
-
-
-
-
-
-
-
-
 
 !! --- ST
+!! Font
+*.font: JetBrainsMonoNL NF-10:antialias=true:autohint=true
+
 !! charscale
-/* *.cwscale: 1.0 */
-/* *.chscale: 1.0 */
+*.cwscale: 1.0
+*.chscale: 1.0
 
 !! borderpx
-/* *.borderpx: 2 */
+*.borderpx: 2
 
 !! Transparency
-/* *.alpha: 255 */
-/* *.alphaOffset: 0.0 */
+*.alpha: 255
+*.alphaOffset: 0.0
+
+!! --- XTerm
+/* XTerm.termName: xterm-256color */
+
+/* XTerm*faceName: JetBrainsMonoNL NF */
+/* XTerm*faceSize: 10 */
+
+!! Locale
+/* XTerm.vt100.locale: true */
+
+!! Selection
+/* XTerm*highlightSelection: true */
+/* XTerm*trimSelection: true */
+
+!! Scrolling
+/* XTerm*saveLines: 16384 */
+/* XTerm*scrollTtyOutput: false */
+
+!! Disable fullscreen
+/* XTerm*fullscreen: never */
+
+!! Enable ALT
+/* XTerm*metaSendsEscape: true */
 

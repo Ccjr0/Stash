@@ -153,7 +153,7 @@ unsigned int background = 258;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")
+ * 7: Snowman ("")
  */
 static unsigned int cursorshape = 6;
 
@@ -162,7 +162,7 @@ static unsigned int cursorshape = 6;
  */
 
 static unsigned int cols = 110;
-static unsigned int rows = 33;
+static unsigned int rows = 34;
 
 /*
  * Default colour and shape of the mouse cursor
