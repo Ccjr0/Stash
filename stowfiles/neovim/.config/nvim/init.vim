@@ -143,6 +143,7 @@ call plug#end()
 "" --- Startify
 map <silent> <leader>s :Startify<CR>
 
+
 "" --- Vimwiki
 let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki'},
             \ {'path': '$HOME/Gwiki/vimwiki'}]
