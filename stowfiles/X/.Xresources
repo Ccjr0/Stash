@@ -3,9 +3,8 @@
 !! --- Theme
 #include ".config/xrdb/apprentice.xrdb"
 
-!! --- ST
-!! Font
-*.font: JetBrainsMonoNL NF-10:antialias=true:autohint=true
+!! Fonts
+*.font: JetBrainsMonoNL NF:size=10:antialias=true:autohint=true
 
 !! charscale
 *.cwscale: 1.0
@@ -18,26 +17,22 @@
 *.alpha: 255
 *.alphaOffset: 0.0
 
-!! --- XTerm
-/* XTerm.termName: xterm-256color */
 
-/* XTerm*faceName: JetBrainsMonoNL NF */
-/* XTerm*faceSize: 10 */
 
-!! Locale
-/* XTerm.vt100.locale: true */
 
-!! Selection
-/* XTerm*highlightSelection: true */
-/* XTerm*trimSelection: true */
 
-!! Scrolling
-/* XTerm*saveLines: 16384 */
-/* XTerm*scrollTtyOutput: false */
 
-!! Disable fullscreen
-/* XTerm*fullscreen: never */
 
-!! Enable ALT
-/* XTerm*metaSendsEscape: true */
+!! URXVT
+/* *font: xft:JetBrainsMonoNL NF:size=10:antialias=true:hinting=true */
+/* *boldFont: xft:JetBrainsMonoNL NF:bold:size=10:antialias=true:hinting=true */
+
+/* *scrollBar: false */
+/* URxvt.saveLines: 30000 */
+/* scrollWithBuffer: true */
+
+/* URxvt.iso14755: false */
+/* URxvt.iso14755_52: false */
+
+/* URxvt*geometry: 100x32 */
 

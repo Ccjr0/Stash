@@ -121,12 +121,11 @@ Plug 'vimwiki/vimwiki'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'junegunn/goyo.vim'
+
+" Plug 'junegunn/goyo.vim'
 " Plug 'Shougo/vimfiler'
 " Plug 'Yggdroot/indentLine'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -134,6 +133,8 @@ Plug 'junegunn/goyo.vim'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'mfussenegger/nvim-dap'
+" Plug 'tpope/vim-surround'
+ " Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
