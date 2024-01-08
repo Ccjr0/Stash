@@ -8,9 +8,9 @@ set filesep "\n"
 set period 1
 set ignorecase true
 set smartcase true
-set scrolloff 4
+set scrolloff 8
 set icons true
-set ratios 1:2
+# set ratios 1:2
 # set hidden true
 # set info size
 # set info time
@@ -28,9 +28,9 @@ set cleaner ctpvclear
 # &stpvimg --listen $id
 # cmd on-quit $stpvimg --end $id
 
-#=================
-#    COMMANDS    |
-#=================
+##############
+#  COMMANDS  #
+##############
 ## --- Make files and directories
 cmd mkdir ${{
   printf "Directory Name: "
@@ -158,9 +158,9 @@ cmd fzf_jump ${{
 ## --- Warn about nested instances
 %[ $LF_LEVEL -eq 1 ] || echo "Warning: You're in a nested lf instance!"
 
-#================
-#    KEYMAPS    |
-#================
+#############
+#  KEYMAPS  #
+#############
 ## --- Unmappings
 map f
 map F
@@ -226,9 +226,9 @@ map gr cd ~/Repos
 map gu cd ~/UHaul
 map gs cd ~/Stash
 map gn cd ~/Documents/notes
-map gwi cd ~/Documents/vimwiki
+map gwi cd ~/Gwiki
 map gc cd ~/.config
-map gl cd ~/.local/
+map gl cd ~/.local
 map gT cd ~/.local/share/Trash/files
 map gwp cd ~/.local/share/wallpapers
 map g/ cd /
