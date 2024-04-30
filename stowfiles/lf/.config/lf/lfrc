@@ -8,7 +8,7 @@ set filesep "\n"
 set period 1
 set ignorecase true
 set smartcase true
-set scrolloff 8
+set scrolloff 4
 set icons true
 set ratios 1:2
 # set hidden true
@@ -183,13 +183,13 @@ map mf mkfile
 map md mkdir
 map . set hidden!
 map q quit
-map x trash
+map X trash
 map D delete
 map p paste
 map d cut
 map C clear
 map y copy
-map Y yank-path
+map <c-y> yank-path
 map <enter> open
 map <c-r> reload
 map ze extract
@@ -225,8 +225,7 @@ map gv cd ~/Videos
 map gr cd ~/Repos
 map gu cd ~/UHaul
 map gs cd ~/Stash
-map gn cd ~/Documents/notes
-map gwi cd ~/Gwiki
+map gwi cd ~/Documents/vimwiki
 map gc cd ~/.config
 map gl cd ~/.local
 map gT cd ~/.local/share/Trash/files

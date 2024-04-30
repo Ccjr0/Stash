@@ -85,7 +85,6 @@ alias ytdlp='yt-dlp --embed-metadata'
 alias ytdlpa='yt-dlp --embed-metadata -x --audio-format mp3'
 alias gitup='git add . && git commit && git push'
 alias wttr='curl wttr.in'
-alias todo='cat ~/Documents/TODO.md | cowsay'
 
 # alias n3='nnn'
 # alias em='emacs'

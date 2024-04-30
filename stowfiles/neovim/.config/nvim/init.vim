@@ -121,20 +121,19 @@ Plug 'vimwiki/vimwiki'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-commentary'
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-webdevicons'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Plug 'junegunn/goyo.vim'
 " Plug 'Shougo/vimfiler'
 " Plug 'Yggdroot/indentLine'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'mfussenegger/nvim-dap'
 " Plug 'tpope/vim-surround'
- " Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -147,7 +146,7 @@ map <silent> <leader>s :Startify<CR>
 
 "" --- Vimwiki
 let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki'},
-            \ {'path': '$HOME/Gwiki/vimwiki'}]
+            \ {'path': '$HOME/Documents/gwiki/vimwiki'}]
 
 " let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki/',
 "                       \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -181,12 +180,12 @@ let g:lightline = {
 
 "" --- Colorscheme
 set background=dark
-colorscheme apprentice
+colo apprentice
 set termguicolors
 
-highlight VertSplit guifg=#444444 guibg=#262626 gui=NONE cterm=NONE
-highlight Comment guifg=#6c6c6c guibg=NONE gui=italic cterm=NONE
-highlight Title guifg=#87af87 guibg=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=NONE
+hi VertSplit guifg=#444444 guibg=#262626 gui=NONE cterm=NONE
+hi Comment guifg=#6c6c6c guibg=NONE gui=italic cterm=NONE
+hi Title guifg=#87af87 guibg=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=NONE
 
 hi SpellBad guifg=#262626 guibg=#af5f5f guisp=#af5f5f gui=bold cterm=bold
 hi SpellCap guifg=#262626 guibg=#5fafaf guisp=#5fafaf gui=bold cterm=bold
