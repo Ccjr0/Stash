@@ -26,6 +26,7 @@ set softtabstop=4
 set expandtab
 set signcolumn=yes
 set laststatus=2
+set undofile
 set nocompatible
 
 """"""""""""""
