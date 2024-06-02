@@ -13,12 +13,12 @@ set number
 set linebreak
 set cursorline
 set noshowmode
-set scrolloff=8
-set sidescrolloff=8
+set scrolloff=6
+set sidescrolloff=6
 set ignorecase
 set smartcase
 set splitbelow splitright
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set shiftwidth=4
 set autoindent
 set tabstop=4
@@ -46,6 +46,18 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " When shortcuts files are updated, renew zsh and vifm configs with new material
 " autocmd BufWritePost * %s/\s\+%//e
+
+"" --- Clear cmd line message with timer
+function! s:empty_message(timer)
+  if mode() ==# 'n'
+    echon ''
+  endif
+endfunction
+
+augroup cmd_msg_cls
+    autocmd!
+    autocmd CmdlineLeave :  call timer_start(1000, funcref('s:empty_message'))
+augroup END
 
 """"""""""""""""""""
 "  BASIC MAPPINGS  "
@@ -87,8 +99,8 @@ nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
 nnoremap <silent> <C-x> :wincmd x<CR>
 
-" noremap <silent> <C-S-k> :vertical resize +3<CR>
-" noremap <silent> <C-S-j> :vertical resize -3<CR>
+noremap <silent> <A-S-k> :vertical resize +3<CR>
+noremap <silent> <A-S-j> :vertical resize -3<CR>
 
 "" --- Search/replace shortcuts
 nnoremap <C-\> :%s//g<Left><Left>
@@ -110,7 +122,6 @@ nnoremap <silent> <C-_> :noh<CR>
 
 "" --- Disable operations
 nnoremap <C-z> <nop>
-nnoremap M <nop>
 
 "" --- Check spelling
 nnoremap gs :setlocal spell! spelllang=en_us<CR>
@@ -149,10 +160,14 @@ call plug#end()
 "" --- Startify
 map <silent> <leader>s :Startify<CR>
 
+"" --- Lightline
+let g:lightline = {
+      \ 'colorscheme': 'apprentice',
+      \ }
 
 "" --- Vimwiki
 let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki'},
-            \ {'path': '$HOME/Documents/gwiki/vimwiki'}]
+            \ {'path': '$HOME/Documents/Gwiki/vimwiki'}]
 
 " let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki/',
 "                       \ 'syntax': 'markdown', 'ext': '.md'}]
@@ -177,13 +192,29 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 
 "" --- Goyo
 map <silent> <leader>g :Goyo<CR>
-let g:goyo_width = 160
-let g:goyo_height = 90
+let g:goyo_width = '65%'
+let g:goyo_height = '90%'
 
-"" --- Lightline
-let g:lightline = {
-      \ 'colorscheme': 'apprentice',
-      \ }
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
+
+autocmd! User GoyoEnter call <SID>goyo_enter()
+autocmd! User GoyoLeave call <SID>goyo_leave()
 
 "" --- Colorscheme
 set background=dark

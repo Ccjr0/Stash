@@ -10,11 +10,11 @@ export PATH="$HOME/.local/bin:$PATH"
 export SHELL=/bin/zsh
 export OPENER="xdg-open"
 export EDITOR="nvim"
-export TERMINAL="st"
+export TERMINAL="gnome-terminal"
 export VISUAL="nvim"
 export PAGER="less"
 export READER="zathura"
-export BROWSER="brave"
+export BROWSER="firefox"
 export COLORTERM="truecolor"
 export GTK_USE_PORTAL=1
 

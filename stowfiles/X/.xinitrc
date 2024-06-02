@@ -52,5 +52,5 @@ fi
 setxkbmap -option caps:escape &
 
 # Set repeat keys
-xset r rate 230 60 &
+xset r rate 250 30 &
 

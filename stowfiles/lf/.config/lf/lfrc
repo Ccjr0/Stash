@@ -8,7 +8,7 @@ set filesep "\n"
 set period 1
 set ignorecase true
 set smartcase true
-set scrolloff 4
+set scrolloff 6
 set icons true
 set ratios 1:2
 # set hidden true
@@ -192,7 +192,8 @@ map y copy
 map <c-y> yank-path
 map <enter> open
 map <c-r> reload
-map ze extract
+map xe extract
+map xz zip
 map f follow_link
 map L :link
 
@@ -217,6 +218,7 @@ map K push 2k
 
 ## --- Bookmarks
 map gb cd ~/bin
+map gde cd ~/Desktop
 map gdo cd ~/Documents
 map gdw cd ~/Downloads
 map gm cd ~/Music

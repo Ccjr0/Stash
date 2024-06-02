@@ -1,0 +1,92 @@
+# zathurarc
+
+## --- Settings
+set font "JetBrainsMonoNL NF 10"
+set statusbar-h padding 0
+set statusbar-v padding 0
+set page-padding 0
+set window-title-home-tilde true
+set statusbar-home-tilde true
+set selection-clipboard clipboard
+set selection-notification false
+set adjust-open width
+set guioptions ""
+set adjust-open "best-fit"
+
+## --- Recolor book content's color
+set recolor                     true
+set recolor-lightcolor          "#262626" # base02
+set recolor-darkcolor           "#BCBCBC" # base1
+set recolor-keephue             true      # keep original color
+
+## --- Keymaps
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+map <C-Tab> toggle_statusbar
+
+map u scroll half-up
+map d scroll half-down
+map H scroll full-up
+map L scroll full-down
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map _ zoom out
+map i recolor
+
+map [fullscreen] u scroll half-up
+map [fullscreen] d scroll half-down
+map [fullscreen] H scroll full-up
+map [fullscreen] L scroll full-down
+map [fullscreen] D toggle_page_mode
+map [fullscreen] r reload
+map [fullscreen] R rotate
+map [fullscreen] K zoom in
+map [fullscreen] J zoom out
+map [fullscreen] _ zoom out
+map [fullscreen] i recolor
+
+
+## --- Colors
+## Light/Default mode settings:
+set notification-error-bg       "#AF5F5F" # Red
+set notification-error-fg       "#BCBCBC" # Foreground
+set notification-warning-bg     "#87875f" # Orange
+set notification-warning-fg     "#303030" # Selection
+set notification-bg             "#262626" # Background
+set notification-fg             "#BCBCBC" # Foreground
+
+set completion-bg               "#262626" # Background
+set completion-fg               "#6c6c6c" # Comment
+set completion-group-bg         "#262626" # Background
+set completion-group-fg         "#6c6c6c" # Comment
+set completion-highlight-bg     "#303030" # Selection
+set completion-highlight-fg     "#BCBCBC" # Foreground
+
+set index-bg                    "#262626" # Background
+set index-fg                    "#BCBCBC" # Foreground
+set index-active-bg             "#303030" # Current Line
+set index-active-fg             "#BCBCBC" # Foreground
+
+set inputbar-bg                 "#262626" # Background
+set inputbar-fg                 "#BCBCBC" # Foreground
+set statusbar-bg                "#262626" # Background
+set statusbar-fg                "#BCBCBC" # Foreground
+
+set highlight-color             "#5F87AF" # Orange
+set highlight-active-color      "#87875f" # Pink
+
+set default-bg                  "#262626" # Background
+set default-fg                  "#BCBCBC" # Foreground
+
+set render-loading              true
+set render-loading-fg           "#262626" # Background
+set render-loading-bg           "#BCBCBC" # Foreground
+
+## Recolor mode settings
+set recolor-lightcolor          "#262626" # Background
+set recolor-darkcolor           "#BCBCBC" # Foreground

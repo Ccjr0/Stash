@@ -12,7 +12,6 @@ precmd_vcs_info() { vcs_info }
 precmd_functions+=( precmd_vcs_info )
 setopt prompt_subst
 
-
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 
 +vi-git-untracked(){
@@ -81,21 +80,13 @@ alias la='ls -AFHh --color=auto --group-directories-first'
 alias ll='ls -AFHhl --color=auto --group-directories-first'
 alias vi='nvim'
 alias vim='nvim'
-alias ytdlp='yt-dlp --embed-metadata'
-alias ytdlpa='yt-dlp --embed-metadata -x --audio-format mp3'
 alias gitup='git add . && git commit && git push'
 alias wttr='curl wttr.in'
+alias ytdlp='yt-dlp -f "((bv*[fps>30]/bv*)[height<=1080]/(wv*[fps>30]/wv*)) + ba / (b[fps>30]/b)[height<=1080]/(w[fps>30]/w)" --embed-subs --embed-metadata'
+alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 
-# alias n3='nnn'
-# alias em='emacs'
-# alias fm='vifm'
-# alias xup='xrdb ~/.Xresources'
-# alias ls='lsd --group-dirs=first'
-# alias la='lsd -A --group-dirs=first'
-# alias ll='lsd -AlF --group-dirs=first'
-# alias ls='exa --icons --group-directories-first'
-# alias la='exa --icons -a --group-directories-first'
-# alias ll='exa --icons -alF --group-directories-first'
+# alias ytdlp2='yt-dlp --format "bv*[height<=1080]+ba/b" --embed-subs --embed-thumbnail --embed-metadata'
+
 # alias ytdl='youtube-dl'
 # alias ytdla='youtube-dl --add-metadata -x --audio-format mp3'
 
