@@ -227,10 +227,10 @@ map gv cd ~/Videos
 map gr cd ~/Repos
 map gu cd ~/UHaul
 map gs cd ~/Stash
-map gwi cd ~/Documents/vimwiki
+map gn cd ~/Documents/notes
 map gc cd ~/.config
 map gl cd ~/.local
 map gT cd ~/.local/share/Trash/files
-map gwp cd ~/.local/share/wallpapers
+map gw cd ~/.local/share/wallpapers
 map g/ cd /
 

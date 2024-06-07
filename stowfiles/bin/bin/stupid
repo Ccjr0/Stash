@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for file in *.wiki; do
+    output_file=${file%.wiki}.md
+    pandoc -f vimwiki -t markdown "$file" -o "$output_file"
+done

@@ -3,6 +3,7 @@
 """"""""""""""
 "  SETTINGS  "
 """"""""""""""
+let mapleader = ";"
 set hidden
 set confirm
 set mouse=a
@@ -27,7 +28,9 @@ set expandtab
 set signcolumn=yes
 set laststatus=2
 set undofile
-set nocompatible
+set formatoptions-=cro
+set fo+=tcro
+filetype plugin on
 
 """"""""""""""
 "  COMMANDS  "
@@ -40,9 +43,6 @@ autocmd BufWritePre * %s/\s\+$//e
 
 " Run xrdb whenever Xdefaults or Xresources are updated
 autocmd BufWritePost *Xresources,*Xdefaults,*.xrdb !xrdb $HOME/.Xresources
-
-" Disable automatic comment insertion on new line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " When shortcuts files are updated, renew zsh and vifm configs with new material
 " autocmd BufWritePost * %s/\s\+%//e
@@ -62,45 +62,44 @@ augroup END
 """"""""""""""""""""
 "  BASIC MAPPINGS  "
 """"""""""""""""""""
-let mapleader = ";"
-
 "" --- Easier movement keys (normal)
+nnoremap gh h
 nnoremap gj L
 nnoremap gk H
-nnoremap gh h
 nnoremap gl l
+nnoremap gm M
+nnoremap H h
 nnoremap J gj
 nnoremap K gk
 nnoremap L l
-nnoremap H h
 
 "" --- Easier movement keys (visual)
 vnoremap gj L
 vnoremap gk H
+vnoremap gm M
+vnoremap H h
 vnoremap J gj
 vnoremap K gk
 vnoremap L l
-vnoremap H h
 
 "" --- Easier movement keys (block)
+xnoremap H h
 xnoremap J gj
 xnoremap K gk
 xnoremap L l
-xnoremap H h
 
 "" --- Stay in indent mode (visual)
 vnoremap < <gv
 vnoremap > >gv
 
 "" --- Split movements
-nnoremap <silent> <C-k> :wincmd k<CR>
-nnoremap <silent> <C-j> :wincmd j<CR>
 nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
 nnoremap <silent> <C-l> :wincmd l<CR>
-nnoremap <silent> <C-x> :wincmd x<CR>
 
-noremap <silent> <A-S-k> :vertical resize +3<CR>
 noremap <silent> <A-S-j> :vertical resize -3<CR>
+noremap <silent> <A-S-k> :vertical resize +3<CR>
 
 "" --- Search/replace shortcuts
 nnoremap <C-\> :%s//g<Left><Left>
@@ -166,11 +165,13 @@ let g:lightline = {
       \ }
 
 "" --- Vimwiki
-let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki'},
-            \ {'path': '$HOME/Documents/Gwiki/vimwiki'}]
+let g:vimwiki_list = [{'path': '$HOME/Documents/notes/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
-" let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki/',
-"                       \ 'syntax': 'markdown', 'ext': '.md'}]
+" let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki'},
+"             \ {'path': '$HOME/Documents/Gwiki/vimwiki'}]
+
+" let g:vimwiki_list = [{'path': '$HOME/Documents/vimwiki', 'maxhi': 1}]
 
 "" --- Lf
 let g:lf_map_keys = 0
