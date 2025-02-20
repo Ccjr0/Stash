@@ -50,7 +50,7 @@ hi StatusLineTerm guifg=#262626 guibg=#87875f gui=NONE cterm=NONE
 hi StatusLineTermNC guifg=#87875f guibg=#444444 gui=NONE cterm=NONE
 hi Visual guifg=#87afd7 guibg=#262626 gui=reverse cterm=reverse
 hi VisualNOS guifg=NONE guibg=NONE gui=underline ctermfg=NONE ctermbg=NONE cterm=underline
-hi VertSplit guifg=#444444 guibg=#444444 gui=NONE cterm=NONE
+hi VertSplit guifg=#444444 guibg=#262626 gui=NONE cterm=NONE
 hi WildMenu guifg=#262626 guibg=#87afd7 gui=NONE cterm=NONE
 hi DiffAdd guifg=#87afff guibg=#303030 gui=reverse cterm=reverse
 hi DiffChange guifg=#dfdfdf guibg=#303030 gui=reverse cterm=reverse
@@ -69,7 +69,7 @@ hi ColorColumn guifg=NONE guibg=#1c1c1c gui=NONE cterm=NONE
 hi! link Terminal Normal
 hi! link CursorIM Cursor
 hi! link QuickFixLine Search
-hi Comment guifg=#6c6c6c guibg=NONE gui=NONE cterm=NONE
+hi Comment guifg=#6c6c6c guibg=NONE gui=italic cterm=NONE
 hi Conceal guifg=#bcbcbc guibg=NONE gui=NONE cterm=NONE
 hi Constant guifg=#ff8700 guibg=NONE gui=NONE cterm=NONE
 hi Error guifg=#af5f5f guibg=NONE gui=reverse cterm=reverse
@@ -84,7 +84,7 @@ hi Type guifg=#8787af guibg=NONE gui=NONE cterm=NONE
 hi Underlined guifg=#5f8787 guibg=NONE gui=underline cterm=underline
 hi Function guifg=#ffffaf guibg=NONE gui=NONE cterm=NONE
 hi SpecialKey guifg=#585858 guibg=NONE gui=NONE cterm=NONE
-hi Title guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
+hi Title guifg=#87af87 guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi helpLeadBlank guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi helpNormal guifg=NONE guibg=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi! link Number Constant
@@ -169,10 +169,10 @@ if s:t_Co >= 256
   hi Directory ctermfg=73 ctermbg=NONE cterm=NONE
   hi debugPC ctermfg=NONE ctermbg=67 cterm=NONE
   hi debugBreakpoint ctermfg=NONE ctermbg=131 cterm=NONE
-  hi SpellBad ctermfg=131 ctermbg=NONE cterm=undercurl
-  hi SpellCap ctermfg=73 ctermbg=NONE cterm=undercurl
-  hi SpellLocal ctermfg=65 ctermbg=NONE cterm=undercurl
-  hi SpellRare ctermfg=208 ctermbg=NONE cterm=undercurl
+  hi SpellBad guifg=#262626 guibg=#af5f5f guisp=#af5f5f gui=bold cterm=bold
+  hi SpellCap guifg=#262626 guibg=#5fafaf guisp=#5fafaf gui=bold cterm=bold
+  hi SpellLocal guifg=#262626 guibg=#5f875f guisp=#5f875f gui=bold cterm=bold
+  hi SpellRare guifg=#262626 guibg=#ff8700 guisp=#ff8700 gui=bold cterm=bold
   hi ColorColumn ctermfg=NONE ctermbg=234 cterm=NONE
   hi! link Terminal Normal
   hi! link CursorIM Cursor

@@ -3,6 +3,7 @@
 ############
 #  PROMPT  #
 ############
+
 autoload -Uz vcs_info
 autoload -U colors && colors
 
@@ -30,6 +31,7 @@ PROMPT+="%B\$vcs_info_msg_0_%b "
 #############
 #  OPTIONS  #
 #############
+
 setopt autocd extendedglob nomatch histignorealldups
 
 ## --- History
@@ -40,6 +42,7 @@ SAVEHIST=50000
 ################
 #  COMPLETION  #
 ################
+
 zstyle :compinstall filename '/home/ccjr/.zshrc'
 autoload -Uz compinit
 compinit
@@ -64,6 +67,7 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 #############
 #  ALIASES  #
 #############
+
 alias sudo='nocorrect sudo -E '     # 'sudo' alias fix
 
 alias cp="cp -i"        # Confirm before overwriting something
@@ -78,6 +82,7 @@ alias egrep='egrep --color=auto'
 alias ls='ls -FHh --color=auto --group-directories-first'
 alias la='ls -AFHh --color=auto --group-directories-first'
 alias ll='ls -AFHhl --color=auto --group-directories-first'
+alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias gitup='git add . && git commit && git push'
@@ -93,6 +98,7 @@ alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 #############
 #  PLUGINS  #
 #############
+
 ## --- vi-mode
 source ~/.config/zsh/vi-mode/vi-mode.zsh
 
@@ -102,3 +108,9 @@ bindkey '^F' autosuggest-accept
 
 ## --- zsh-syntax-highlighting
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+PATH="/home/ccjr/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ccjr/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ccjr/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ccjr/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ccjr/perl5"; export PERL_MM_OPT;

@@ -3,7 +3,6 @@
 """"""""""""""
 "  SETTINGS  "
 """"""""""""""
-let mapleader = ";"
 set hidden
 set confirm
 set mouse=a
@@ -56,12 +55,14 @@ endfunction
 
 augroup cmd_msg_cls
     autocmd!
-    autocmd CmdlineLeave :  call timer_start(1000, funcref('s:empty_message'))
+    autocmd CmdlineLeave :  call timer_start(300, funcref('s:empty_message'))
 augroup END
 
 """"""""""""""""""""
 "  BASIC MAPPINGS  "
 """"""""""""""""""""
+let mapleader = ";"
+
 "" --- Easier movement keys (normal)
 nnoremap gh h
 nnoremap gj L
@@ -92,6 +93,9 @@ xnoremap L l
 vnoremap < <gv
 vnoremap > >gv
 
+"" --- Paste black hole register
+vnoremap p "_dP
+
 "" --- Split movements
 nnoremap <silent> <C-h> :wincmd h<CR>
 nnoremap <silent> <C-j> :wincmd j<CR>
@@ -102,8 +106,8 @@ noremap <silent> <A-S-j> :vertical resize -3<CR>
 noremap <silent> <A-S-k> :vertical resize +3<CR>
 
 "" --- Search/replace shortcuts
-nnoremap <C-\> :%s//g<Left><Left>
-vnoremap <C-\> :s//g<Left><Left>
+nnoremap \ :%s//g<Left><Left>
+vnoremap \ :s//g<Left><Left>
 
 "" --- Tabs
 nnoremap <silent> <C-t> :tabnew<CR>
@@ -117,7 +121,7 @@ nnoremap <silent> <C-q> :quit<CR>
 nnoremap <silent> <C-c> :close<CR>
 
 "" --- Clear search query
-nnoremap <silent> <C-_> :noh<CR>
+nnoremap <silent> <C-/> :noh<CR>
 
 "" --- Disable operations
 nnoremap <C-z> <nop>
@@ -142,14 +146,11 @@ Plug 'ryanoasis/vim-webdevicons'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'junegunn/goyo.vim'
 
-" Plug 'Shougo/vimfiler'
-" Plug 'Yggdroot/indentLine'
+" Plug 'lervag/wiki.vim'
+"
 " Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'terryma/vim-multiple-cursors'
-" Plug 'mfussenegger/nvim-dap'
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -161,10 +162,11 @@ map <silent> <leader>s :Startify<CR>
 
 "" --- Lightline
 let g:lightline = {
-      \ 'colorscheme': 'apprentice',
+      \ 'colorscheme': 'base16',
       \ }
 
 "" --- Vimwiki
+nnoremap <leader>ww <nop>
 let g:vimwiki_list = [{'path': '$HOME/Documents/notes/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
@@ -182,6 +184,8 @@ let g:lf_replace_netrw = 1 " Open lf when vim opens a directory
 let g:vimwiki_global_ext = 0
 
 "" --- Floaterm
+let g:floaterm_width = 0.85
+let g:floaterm_height = 0.85
 map <leader>t :FloatermNew<CR>
 
 "" --- Gitgutter
@@ -193,7 +197,7 @@ let g:Hexokinase_highlighters = ['backgroundfull']
 
 "" --- Goyo
 map <silent> <leader>g :Goyo<CR>
-let g:goyo_width = '65%'
+let g:goyo_width = '60%'
 let g:goyo_height = '90%'
 
 function! s:goyo_enter()
@@ -221,18 +225,5 @@ autocmd! User GoyoLeave call <SID>goyo_leave()
 set background=dark
 set termguicolors
 
-function! s:tweak_apprentice()
-hi VertSplit guifg=#444444 guibg=#262626 gui=NONE cterm=NONE
-hi Comment guifg=#6c6c6c guibg=NONE gui=italic cterm=NONE
-hi Title guifg=#87af87 guibg=NONE gui=bold ctermfg=NONE ctermbg=NONE cterm=NONE
-
-hi SpellBad guifg=#262626 guibg=#af5f5f guisp=#af5f5f gui=bold cterm=bold
-hi SpellCap guifg=#262626 guibg=#5fafaf guisp=#5fafaf gui=bold cterm=bold
-hi SpellLocal guifg=#262626 guibg=#5f875f guisp=#5f875f gui=bold cterm=bold
-hi SpellRare guifg=#262626 guibg=#ff8700 guisp=#ff8700 gui=bold cterm=bold
-endfunction
-
-autocmd! ColorScheme apprentice call s:tweak_apprentice()
-
-colorscheme apprentice
+colorscheme base16
 

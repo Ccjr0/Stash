@@ -15,11 +15,17 @@ set adjust-open "best-fit"
 
 ## --- Recolor book content's color
 set recolor                     true
-set recolor-lightcolor          "#262626" # base02
-set recolor-darkcolor           "#BCBCBC" # base1
+set recolor-lightcolor          "#181818" # base02
+set recolor-darkcolor           "#d8d8d8" # base1
 set recolor-keephue             true      # keep original color
 
 ## --- Keymaps
+unmap c
+unmap y
+
+map y copy
+map <C-c> copy
+
 unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
@@ -36,7 +42,7 @@ map R rotate
 map K zoom in
 map J zoom out
 map _ zoom out
-map i recolor
+map <C-i> recolor
 
 map [fullscreen] u scroll half-up
 map [fullscreen] d scroll half-down
@@ -48,45 +54,45 @@ map [fullscreen] R rotate
 map [fullscreen] K zoom in
 map [fullscreen] J zoom out
 map [fullscreen] _ zoom out
-map [fullscreen] i recolor
+map [fullscreen] <C-i> recolor
 
 
 ## --- Colors
 ## Light/Default mode settings:
-set notification-error-bg       "#AF5F5F" # Red
-set notification-error-fg       "#BCBCBC" # Foreground
-set notification-warning-bg     "#87875f" # Orange
+set notification-error-bg       "#ac4242" # Red
+set notification-error-fg       "#d8d8d8" # Foreground
+set notification-warning-bg     "#90a959" # Orange
 set notification-warning-fg     "#303030" # Selection
-set notification-bg             "#262626" # Background
-set notification-fg             "#BCBCBC" # Foreground
+set notification-bg             "#181818" # Background
+set notification-fg             "#d8d8d8" # Foreground
 
-set completion-bg               "#262626" # Background
+set completion-bg               "#181818" # Background
 set completion-fg               "#6c6c6c" # Comment
-set completion-group-bg         "#262626" # Background
+set completion-group-bg         "#181818" # Background
 set completion-group-fg         "#6c6c6c" # Comment
 set completion-highlight-bg     "#303030" # Selection
-set completion-highlight-fg     "#BCBCBC" # Foreground
+set completion-highlight-fg     "#d8d8d8" # Foreground
 
-set index-bg                    "#262626" # Background
-set index-fg                    "#BCBCBC" # Foreground
+set index-bg                    "#181818" # Background
+set index-fg                    "#d8d8d8" # Foreground
 set index-active-bg             "#303030" # Current Line
-set index-active-fg             "#BCBCBC" # Foreground
+set index-active-fg             "#d8d8d8" # Foreground
 
-set inputbar-bg                 "#262626" # Background
-set inputbar-fg                 "#BCBCBC" # Foreground
-set statusbar-bg                "#262626" # Background
-set statusbar-fg                "#BCBCBC" # Foreground
+set inputbar-bg                 "#181818" # Background
+set inputbar-fg                 "#d8d8d8" # Foreground
+set statusbar-bg                "#181818" # Background
+set statusbar-fg                "#d8d8d8" # Foreground
 
-set highlight-color             "#5F87AF" # Orange
-set highlight-active-color      "#87875f" # Pink
+set highlight-color             "#6a9fb5" # Orange
+set highlight-active-color      "#90a959" # Pink
 
-set default-bg                  "#262626" # Background
-set default-fg                  "#BCBCBC" # Foreground
+set default-bg                  "#181818" # Background
+set default-fg                  "#d8d8d8" # Foreground
 
 set render-loading              true
-set render-loading-fg           "#262626" # Background
-set render-loading-bg           "#BCBCBC" # Foreground
+set render-loading-fg           "#181818" # Background
+set render-loading-bg           "#d8d8d8" # Foreground
 
 ## Recolor mode settings
-set recolor-lightcolor          "#262626" # Background
-set recolor-darkcolor           "#BCBCBC" # Foreground
+set recolor-lightcolor          "#181818" # Background
+set recolor-darkcolor           "#d8d8d8" # Foreground
