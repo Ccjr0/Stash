@@ -1,19 +1,24 @@
 !! Xresources
 
-!! --- Theme
+!! Theme
+
 #include ".config/xrdb/apprentice.xrdb"
 
 !! Fonts
+
 *.font: JetBrainsMonoNL NF:size=10:antialias=true:autohint=true
 
 !! charscale
+
 *.cwscale: 1.0
 *.chscale: 1.0
 
 !! borderpx
+
 *.borderpx: 2
 
 !! Transparency
+
 *.alpha: 255
 *.alphaOffset: 0.0
 

@@ -1,8 +1,21 @@
 # zshrc
 
-############
-#  PROMPT  #
-############
+# === OPTIONS ===
+
+setopt autocd extendedglob nomatch histignorealldups
+
+# History
+
+HISTFILE=$HOME/.histfile
+HISTSIZE=50000
+SAVEHIST=50000
+
+# === PROMPT ===
+
+PROMPT=' %F{blue}%B%~%b%f %F{gray}%B>>%f%b'
+PROMPT+="%B\$vcs_info_msg_0_%b "
+
+# Version control
 
 autoload -Uz vcs_info
 autoload -U colors && colors
@@ -25,56 +38,15 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
 
-PROMPT=' %F{blue}%B%~%b%f %F{gray}%B>>%f%b'
-PROMPT+="%B\$vcs_info_msg_0_%b "
-
-#############
-#  OPTIONS  #
-#############
-
-setopt autocd extendedglob nomatch histignorealldups
-
-## --- History
-HISTFILE=$HOME/.histfile
-HISTSIZE=50000
-SAVEHIST=50000
-
-################
-#  COMPLETION  #
-################
-
-zstyle :compinstall filename '/home/ccjr/.zshrc'
-autoload -Uz compinit
-compinit
-
-## --- For enabling auto-completion of privileged environments in privileged commands
-zstyle ':completion::complete:*' gain-privileges 1
-
-## --- Auto complete with case insensitivity
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"     # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                          # automatically find new executables in path
-
-## --- Speed up completions
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
-#############
-#  ALIASES  #
-#############
+# === ALIASES ===
 
 alias sudo='nocorrect sudo -E '     # 'sudo' alias fix
 
-alias cp="cp -i"        # Confirm before overwriting something
-alias rm='rm -i'        # Confirm before removing something
-alias df='df -h'        # Human-readable sizes
-alias free='free -m'    # Show sizes in MB
-alias mkdir='mkdir -p'  # Make parent dirs as needed
+alias cp="cp -i"            # Confirm before overwriting something
+alias rm='rm -i'            # Confirm before removing something
+alias df='df -h'            # Human-readable sizes
+alias free='free -m'        # Show sizes in MB
+alias mkdir='mkdir -p'      # Make parent dirs as needed
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -91,22 +63,48 @@ alias ytdlp='yt-dlp -f "((bv*[fps>30]/bv*)[height<=1080]/(wv*[fps>30]/wv*)) + ba
 alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 
 # alias ytdlp2='yt-dlp --format "bv*[height<=1080]+ba/b" --embed-subs --embed-thumbnail --embed-metadata'
-
 # alias ytdl='youtube-dl'
 # alias ytdla='youtube-dl --add-metadata -x --audio-format mp3'
 
-#############
-#  PLUGINS  #
-#############
+# === COMPLETION ===
 
-## --- vi-mode
+zstyle :compinstall filename '/home/ccjr/.zshrc'
+autoload -Uz compinit
+compinit
+
+# For enabling auto-completion of privileged environments in privileged commands
+
+zstyle ':completion::complete:*' gain-privileges 1
+
+# Auto complete with case insensitivity
+
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"     # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                          # automatically find new executables in path
+
+# Speed up completions
+
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# === PLUGINS ===
+
+# vi-mode
+
 source ~/.config/zsh/vi-mode/vi-mode.zsh
 
-## --- zsh-autosuggestions
+# zsh-autosuggestions
+
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^F' autosuggest-accept
 
-## --- zsh-syntax-highlighting
+# zsh-syntax-highlighting
+
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 PATH="/home/ccjr/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -114,3 +112,8 @@ PERL5LIB="/home/ccjr/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/ccjr/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/ccjr/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/ccjr/perl5"; export PERL_MM_OPT;
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

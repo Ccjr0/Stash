@@ -1,6 +1,7 @@
 # lfrc
 
-## --- Basic Settings
+# Basic Settings
+
 set shell zsh
 set shellopts '-euy'
 set ifs "\n"
@@ -16,22 +17,103 @@ set ratios 1:2
 # set info time
 # set drawbox
 
-# --- Preview with ctpv
+# Preview with ctpv
+
 set previewer ctpv
 set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
-# --- Preview with stpv
+# Preview with stpv
+
 # set previewer stpv
 # set cleaner stpvimgclr
 # &stpvimg --listen $id
 # cmd on-quit $stpvimg --end $id
 
-##############
-#  COMMANDS  #
-##############
-## --- Make files and directories
+# === KEYMAPS ===
+
+# Unmappings
+
+map f
+map F
+map ;
+map w
+map <c-f>
+map <c-b>
+map m
+map M
+map H
+# map za
+# map zh
+# map zn
+# map zr
+# map zs
+# map zt
+
+# Basic Keymaps
+
+map mf mkfile
+map md mkdir
+map ml :link
+map . set hidden!
+map q quit
+map X trash
+map D delete
+map p paste
+map d cut
+map C clear
+map y copy
+map <c-y> yank-path
+map <enter> open
+map <c-r> reload
+map xe extract
+map xz zip
+map f follow_link
+
+# Sudo
+
+map Smf sudomkfile
+map Smd sudomkdir
+
+# Command keymaps
+
+map a :rename; cmd-end
+map i :rename; cmd-home
+map r push a<c-u>
+map <c-v> $printf '%s\n' "$fx" | vidir -
+
+# Motion
+
+map gk high
+map gj low
+map J push 2j
+map K push 2k
+
+# Bookmarks
+
+map gb cd ~/bin
+map gde cd ~/Desktop
+map gdo cd ~/Documents
+map gdw cd ~/Downloads
+map gm cd ~/Music
+map gp cd ~/Pictures
+map gv cd ~/Videos
+map gV cd ~/.config/nvim
+map gr cd ~/Repos
+map gu cd ~/UHaul
+map gs cd ~/Stash
+map gn cd ~/Documents/notes
+map gc cd ~/.config
+map gl cd ~/.local
+map gT cd ~/.local/share/Trash/files
+map gw cd ~/.local/share/wallpapers
+map g/ cd /
+
+# === COMMANDS ===
+
+# Make files and directories
+
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
@@ -44,7 +126,8 @@ cmd mkfile ${{
   touch $ans
 }}
 
-## --- Make files and directories with sudo
+# Make files and directories with sudo
+
 cmd sudomkdir ${{
   printf "Directory Name: "
   read ans
@@ -57,7 +140,8 @@ cmd sudomkfile ${{
   sudo touch $ans
 }}
 
-## --- Archive commands
+# Archive commands
+
 cmd extract ${{
     set -f
     atool -x $f
@@ -68,7 +152,8 @@ cmd tar %tar cvf "$f.tar" "$f"
 cmd targz %tar cvzf "$f.tar.gz" "$f"
 cmd tarbz2 %tar cjvf "$f.tar.bz2" "$f"
 
-## --- Trash commands
+# Trash commands
+
 cmd trash ${{
   files=$(printf "$fx" | tr '\n' ';')
   while [ "$files" ]; do
@@ -87,14 +172,17 @@ cmd restore_trash ${{
   trash-restore
 }}
 
-## --- Follow symlinks
+# Follow symlinks
+
 cmd follow_link %{{
   lf -remote "send ${id} select '$(readlink $f)'"
 }}
 
-## --- Create symlinks (soft/hard)
+# Create symlinks (soft/hard)
+
 # y (select for copy) and L to paste soft-link
 # d (select for cut) and L to paste hard-link
+
 cmd link %{{
     set -- $(cat ~/.local/share/lf/files)
     mode="$1"
@@ -113,7 +201,8 @@ cmd link %{{
     lf -remote "send clear"
 }}
 
-## --- Yank paths into clipboard
+# Yank paths into clipboard
+
 cmd yank-dirname $dirname -- "$f" | head -c-1 | xclip -i -selection clipboard
 cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
 cmd yank-basename $basename -a -- $fx | head -c-1 | xclip -i -selection clipboard
@@ -138,13 +227,15 @@ cmd yank-basename-without-extension ${{
       xclip -i -selection clipboard
 }}
 
-## --- Open in application
-cmd open-with-gui &$@ $fx ## opens with a gui application outside lf client
-cmd open-with-cli $$@ $fx ## opens with a cli application inside lf client
-map O push :open-with-gui<space> ## input application
-map o push :open-with-cli<space> ## input application
+# Open in application
 
-## --- fzf jump
+cmd open-with-gui &$@ $fx         # opens with a gui application outside lf client
+cmd open-with-cli $$@ $fx         # opens with a cli application inside lf client
+map O push :open-with-gui<space>  # input application
+map o push :open-with-cli<space>  # input application
+
+# fzf jump
+
 cmd fzf_jump ${{
   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
   if [ -f "$res" ]; then
@@ -155,82 +246,7 @@ cmd fzf_jump ${{
   lf -remote "send $id $cmd \"$res\""
 }}
 
-## --- Warn about nested instances
+# Warn about nested instances
+
 %[ $LF_LEVEL -eq 1 ] || echo "Warning: You're in a nested lf instance!"
-
-#############
-#  KEYMAPS  #
-#############
-## --- Unmappings
-map f
-map F
-map ;
-map w
-map za
-map zh
-map zn
-map zr
-map zs
-map zt
-map <c-f>
-map <c-b>
-map m
-map M
-map H
-
-## --- Basic Keymaps
-map mf mkfile
-map md mkdir
-map . set hidden!
-map q quit
-map X trash
-map D delete
-map p paste
-map d cut
-map C clear
-map y copy
-map <c-y> yank-path
-map <enter> open
-map <c-r> reload
-map xe extract
-map xz zip
-map f follow_link
-map L :link
-
-## --- Sudo
-map Smf sudomkfile
-map Smd sudomkdir
-
-## --- Command keymaps
-map A :rename; cmd-end
-map I :rename; cmd-home
-map i :rename
-map a :rename; cmd-right
-map R push A<c-u>
-map r push A<a-b><a-b><a-f><c-u>
-map <c-v> $printf '%s\n' "$fx" | vidir -
-
-## --- Motion
-map gk high
-map gj low
-map J push 2j
-map K push 2k
-
-## --- Bookmarks
-map gb cd ~/bin
-map gde cd ~/Desktop
-map gdo cd ~/Documents
-map gdw cd ~/Downloads
-map gm cd ~/Music
-map gp cd ~/Pictures
-map gv cd ~/Videos
-map gr cd ~/Repos
-map gu cd ~/UHaul
-map gs cd ~/Stash
-map gn cd ~/Documents/notes
-map gc cd ~/.config
-map gl cd ~/.local
-map gT cd ~/.local/share/Trash/files
-map gw cd ~/.local/share/wallpapers
-map g/ cd /
 
