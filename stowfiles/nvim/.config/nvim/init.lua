@@ -1,7 +1,5 @@
 -- init.lua
 
-require("options")
-require("keymaps")
-require("plugins")
-require("config")
-
+require('core')
+require('plugins')
+require('config')

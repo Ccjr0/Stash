@@ -1,0 +1,31 @@
+{
+	"name": "Vimium C",
+	"@time": "2/26/2025, 9:30:19 PM",
+	"time": 1740627019478,
+	"environment": {
+		"extension": "1.99.997",
+		"platform": "linux",
+		"firefox": 135
+	},
+	"keyLayout": 2,
+	"notifyUpdate": false,
+	"showActionIcon": false,
+	"smoothScroll": false,
+	"userDefinedCss": [
+		"/* Hint button background */",
+		".LH {",
+		"    background: #222 !important; /* Dark background */",
+		"    color: #FFF !important; /* White text */",
+		"    border: 1px solid #444 !important; /* Slightly lighter border */",
+		"}",
+		"",
+		"/* Ensure inactive hints remain visible */",
+		".LH.inactive {",
+		"    opacity: 1 !important;",
+		"    background: #333 !important;",
+		"    color: #AAA !important;",
+		"}",
+		""
+	],
+	"vimSync": true
+}

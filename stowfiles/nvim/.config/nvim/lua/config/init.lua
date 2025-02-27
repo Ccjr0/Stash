@@ -1,16 +1,10 @@
--- init.lua
-
--- Lua
-
-require('config.base16-nvim')
+require('config.nvim-base16')
 require('config.lualine')
-require('config.dashboard-nvim')
+require('config.luatab')
+require('config.nvim-comment')
+require('config.nvim-colorizer')
+require('config.lf-vim')
+require('config.vim-floaterm')
 require('config.smart-splits')
 require('config.zen-mode')
-require('config.nvim-comment')
--- require('config.nvim-colorizer')
-
--- Vimscript
-
-require('config.lf-vim')
-require('config.floaterm')
+-- require('config.alpha-nvim')

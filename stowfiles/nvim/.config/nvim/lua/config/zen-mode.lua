@@ -1,5 +1,3 @@
-vim.keymap.set('n', '<leader>g', ':ZenMode<CR>', { silent = true })
-
 require('zen-mode').setup({
     window = {
         backdrop = 1,
@@ -11,3 +9,5 @@ require('zen-mode').setup({
         },
     },
 })
+
+vim.keymap.set('n', '<leader>r', ':ZenMode<CR>', { silent = true })

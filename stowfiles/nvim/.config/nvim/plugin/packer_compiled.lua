@@ -74,16 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["base16-nvim"] = {
-    loaded = true,
-    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/base16-nvim",
-    url = "https://github.com/RRethy/base16-nvim"
-  },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "https://github.com/nvimdev/dashboard-nvim"
-  },
   ["lf.vim"] = {
     loaded = true,
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/lf.vim",
@@ -93,6 +83,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["luatab.nvim"] = {
+    loaded = true,
+    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/luatab.nvim",
+    url = "https://github.com/alvarosevilla95/luatab.nvim"
+  },
+  ["nvim-base16"] = {
+    loaded = true,
+    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/nvim-base16",
+    url = "https://github.com/RRethy/nvim-base16"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -107,7 +107,7 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -123,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/vim-floaterm",
     url = "https://github.com/voldikss/vim-floaterm"
+  },
+  ["vim-signify"] = {
+    loaded = true,
+    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/vim-signify",
+    url = "https://github.com/mhinz/vim-signify"
   },
   ["zen-mode.nvim"] = {
     loaded = true,

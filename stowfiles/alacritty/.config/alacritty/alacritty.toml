@@ -16,7 +16,6 @@ size = 10.0
 [mouse]
 hide_when_typing = true
 
-
 # Base16 Theme
 
 [colors]
@@ -46,7 +45,6 @@ blue = "#82b8c8"
 magenta = "#c28cb8"
 cyan = "#93d3c3"
 white = "#f8f8f8"
-
 
 # Apprentice Theme
 

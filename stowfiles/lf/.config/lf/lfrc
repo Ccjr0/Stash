@@ -58,13 +58,14 @@ map md mkdir
 map ml :link
 map . set hidden!
 map q quit
+map <esc> quit
 map X trash
 map D delete
 map p paste
 map d cut
 map C clear
 map y copy
-map <c-y> yank-path
+map Y yank-path
 map <enter> open
 map <c-r> reload
 map xe extract
@@ -92,7 +93,7 @@ map K push 2k
 
 # Bookmarks
 
-map gb cd ~/bin
+map gb cd ~/.local/bin
 map gde cd ~/Desktop
 map gdo cd ~/Documents
 map gdw cd ~/Downloads
@@ -117,7 +118,7 @@ map g/ cd /
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
-  mkdir $ans
+  mkdir -p $ans
 }}
 
 cmd mkfile ${{
@@ -131,7 +132,7 @@ cmd mkfile ${{
 cmd sudomkdir ${{
   printf "Directory Name: "
   read ans
-  sudo mkdir $ans
+  sudo mkdir -p $ans
 }}
 
 cmd sudomkfile ${{

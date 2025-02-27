@@ -57,8 +57,9 @@ alias ll='ls -AFHhl --color=auto --group-directories-first'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
-alias gitup='git add . && git commit && git push'
 alias wttr='curl wttr.in'
+alias gpt='chatgpt'
+alias gitup='git add . && git commit && git push'
 alias ytdlp='yt-dlp -f "((bv*[fps>30]/bv*)[height<=1080]/(wv*[fps>30]/wv*)) + ba / (b[fps>30]/b)[height<=1080]/(w[fps>30]/w)" --embed-subs --embed-metadata'
 alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 
@@ -100,20 +101,12 @@ source ~/.config/zsh/vi-mode/vi-mode.zsh
 
 # zsh-autosuggestions
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^F' autosuggest-accept
 
 # zsh-syntax-highlighting
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-PATH="/home/ccjr/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/ccjr/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/ccjr/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/ccjr/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/ccjr/perl5"; export PERL_MM_OPT;
-
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
