@@ -13,9 +13,9 @@ require("lualine").setup({
     always_show_tabline = true,
     globalstatus = false,
     refresh = {
-      statusline = 10,
-      tabline = 10,
-      winbar = 10,
+      statusline = 20,
+      tabline = 20,
+      winbar = 20,
     },
   },
   sections = {

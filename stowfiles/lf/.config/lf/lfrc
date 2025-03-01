@@ -6,16 +6,20 @@ set shell zsh
 set shellopts '-euy'
 set ifs "\n"
 set filesep "\n"
-set period 1
 set ignorecase true
 set smartcase true
 set scrolloff 6
 set icons true
 set ratios 1:2
-# set hidden true
+set incsearch true
+set watch true
+set period 1
+set mouse true
 # set info size
 # set info time
+# set hidden true
 # set drawbox
+# set roundbox true
 
 # Preview with ctpv
 
@@ -35,15 +39,20 @@ set cleaner ctpvclear
 
 # Unmappings
 
+map c
 map f
 map F
-map ;
-map w
-map <c-f>
-map <c-b>
+map H
+map L
 map m
 map M
-map H
+map S
+map u
+map ;
+map <c-f>
+map <c-b>
+map <m-1> push
+map <m-2> push
 # map za
 # map zh
 # map zn
@@ -55,7 +64,7 @@ map H
 
 map mf mkfile
 map md mkdir
-map ml :link
+map L :link
 map . set hidden!
 map q quit
 map <esc> quit
@@ -63,6 +72,7 @@ map X trash
 map D delete
 map p paste
 map d cut
+map c unselect
 map C clear
 map y copy
 map Y yank-path
@@ -77,12 +87,16 @@ map f follow_link
 map Smf sudomkfile
 map Smd sudomkdir
 
-# Command keymaps
+# Rename files
 
-map a :rename; cmd-end
+map r :rename; cmd-delete-home
+map R :rename; cmd-end; cmd-delete-home
 map i :rename; cmd-home
-map r push a<c-u>
-map <c-v> $printf '%s\n' "$fx" | vidir -
+map a :rename; cmd-end
+
+# Bulk rename in vidir
+
+map b $printf '%s\n' "$fx" | vidir -
 
 # Motion
 
@@ -93,21 +107,21 @@ map K push 2k
 
 # Bookmarks
 
-map gb cd ~/.local/bin
+map gb cd ~/bin
 map gde cd ~/Desktop
 map gdo cd ~/Documents
 map gdw cd ~/Downloads
 map gm cd ~/Music
 map gp cd ~/Pictures
-map gv cd ~/Videos
-map gV cd ~/.config/nvim
+map gvd cd ~/Videos
 map gr cd ~/Repos
 map gu cd ~/UHaul
 map gs cd ~/Stash
 map gn cd ~/Documents/notes
 map gc cd ~/.config
+map gvi cd ~/.config/nvim
 map gl cd ~/.local
-map gT cd ~/.local/share/Trash/files
+map gx cd ~/.local/share/Trash/files
 map gw cd ~/.local/share/wallpapers
 map g/ cd /
 

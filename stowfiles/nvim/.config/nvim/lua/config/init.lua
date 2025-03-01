@@ -1,4 +1,5 @@
 require('config.nvim-base16')
+require('config.nvim-web-devicons')
 require('config.lualine')
 require('config.luatab')
 require('config.nvim-comment')
@@ -7,4 +8,5 @@ require('config.lf-vim')
 require('config.vim-floaterm')
 require('config.smart-splits')
 require('config.zen-mode')
--- require('config.alpha-nvim')
+require('config.telescope')
+

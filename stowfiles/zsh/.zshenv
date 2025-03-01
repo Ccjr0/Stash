@@ -28,16 +28,16 @@ export LESS_TERMCAP_so=$'\E[01;47;34m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 
+# Password directory (pass)
+
+export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
+
 # Gnome-keyring
 
 # if [ -n "$DESKTOP_SESSION" ];then
 #     eval $(gnome-keyring-daemon --start)
 #     export SSH_AUTH_SOCK
 # fi
-
-# Password directory (pass)
-
-# export PASSWORD_STORE_DIR="$HOME/.local/share/password-store"
 
 # === NNN ===
 

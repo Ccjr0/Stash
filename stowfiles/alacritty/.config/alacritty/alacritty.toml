@@ -1,7 +1,7 @@
 # alacritty.toml
 
 [window]
-dimensions = { columns = 104, lines = 32 }
+dimensions = { columns = 112, lines = 34 }
 padding = { x = 2, y = 2 }
 title = "Alacritty"
 resize_increments = true

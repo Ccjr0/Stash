@@ -6,10 +6,10 @@ vim.opt.hidden = true
 vim.opt.confirm = true
 vim.opt.swapfile = false
 vim.opt.mouse = 'a'
-vim.opt.shiftwidth = 2
+vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.backspace = "indent,eol,start"
 vim.opt.number = true
@@ -55,10 +55,14 @@ keymap ('n', 'gj', 'L', nrs)
 keymap ('n', 'gk', 'H', nrs)
 keymap ('n', 'gm', 'M', nrs)
 
+keymap ('n', 'gl', '$', nrs)
+
 keymap ('v', 'H', 'h', nrs)     -- Visual
 keymap ('v', 'J', 'gj', nrs)
 keymap ('v', 'K', 'gk', nrs)
 keymap ('v', 'L', 'l', nrs)
+
+keymap ('v', 'gl', '$', nrs)
 
 keymap ('v', 'gj', 'L', nrs)
 keymap ('v', 'gk', 'H', nrs)
@@ -69,6 +73,8 @@ keymap ('x', 'J', 'gj', nrs)
 keymap ('x', 'K', 'gk', nrs)
 keymap ('x', 'L', 'l', nrs)
 
+keymap ('x', 'gl', '$', nrs)
+
 -- Split movements
 
 keymap ('n', '<C-h>', ':wincmd h<CR>', nrs)
@@ -76,11 +82,23 @@ keymap ('n', '<C-j>', ':wincmd j<CR>', nrs)
 keymap ('n', '<C-k>', ':wincmd k<CR>', nrs)
 keymap ('n', '<C-l>', ':wincmd l<CR>', nrs)
 
+-- Open/exchange Splits
+
+keymap ('n', '<C-w>l', ':vsplit<CR>', { noremap = true, silent = true }) -- Split right
+keymap ('n', '<C-w>h', ':vsplit<CR><C-w>h', { noremap = true, silent = true }) -- Split left
+keymap ('n', '<C-w>j', ':split<CR><C-w>j', { noremap = true, silent = true }) -- Split below
+keymap ('n', '<C-w>k', ':split<CR><C-w>k', { noremap = true, silent = true }) -- Split above
+
+keymap ('n', '<C-x>', '<C-w>x', { noremap = true, silent = true })
+
 -- Tabs
 
 keymap ('n', '<C-t>', ':tabnew<CR>', nrs)
 keymap ('n', '<A-k>', ':tabn<CR>', nrs)
 keymap ('n', '<A-j>', ':tabp<CR>', nrs)
+
+keymap ('n', '<A-S-j>', ':tabmove -1<CR>', { noremap = true, silent = true })
+keymap ('n', '<A-S-k>', ':tabmove +1<CR>', { noremap = true, silent = true })
 
 -- Quit current window
 
@@ -101,37 +119,27 @@ keymap ('v', '>', '>gv', nrs)
 
 -- Global search/replace shortcut
 
-keymap ('n', [[<C-s>]], ':%s//g<Left><Left>', nr)
-
--- Visual search/replace shortcut
-
-keymap ('v', [[<C-s>]], ':s//g<Left><Left>', nr)
+keymap('n', '<C-f>', ':%s//g<Left><Left>', nr)
+keymap ('v', [[<C-f>]], ':s//g<Left><Left>', nr)
 
 --- Clear search query
 
-keymap ('n', '<C-/>', ':noh<CR>', nrs)
+keymap('n', '<C-/>', ':noh<CR>', nrs)
 
 -- Disable operation (Unmap)
 
 keymap ('n', '<C-z>', '<Nop>', nrs)
 keymap ('n', '<C-q>', '<Nop>', nrs)
-keymap ('n', '<leaser>f', '<Nop>', nrs)
 
 -- Check spelling
 
 keymap ('n', 'gs', ':setlocal spell! spelllang=en_us<CR>', nrs)
 
--- Reload $MYVIMRC and plugins
+--- Function to resource files and sync packer
 
-keymap ('n', '<leader>R',
-  ':lua vim.api.nvim_out_write("Reloading config and plugins...\\n")<CR>' ..
-  ':source $MYVIMRC<CR>' ..
-  ':PackerSync<CR>' ..
-  ':lua vim.api.nvim_out_write("Config and plugins reloaded!\\n")<CR>',
-  { noremap = true, silent = true }
-)
+keymap ('n', '<leader>s', ':PackerSync<CR>', { noremap = true, silent = true })
 
---- === COMMANDS ===
+--- === AUTOCMD ===
 
 -- Remove trailing whitespaces before saving
 
@@ -166,4 +174,31 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions = vim.opt_local.formatoptions - { "c", "r", "o" }
   end,
 })
+
+--- === MISC ===
+
+-- function ReloadConfig()
+--   dofile(vim.fn.stdpath("config") .. "/lua/core.lua")   -- Reload core and plugins
+--   dofile(vim.fn.stdpath("config") .. "/lua/plugins.lua")
+
+--   local status_ok, packer = pcall(require, "packer")  -- Try sync packer
+--   if status_ok then
+--     packer.sync()
+--     vim.notify("Core & Plugins Reloaded + Packer Synced!", vim.log.levels.INFO)
+--   else
+--     vim.notify("Packer not found!", vim.log.levels.WARN)
+--   end
+-- end
+
+-- Define colors
+
+local base00 = "#181818" -- Background
+local base03 = "#585858" -- Selected tabline
+local base05 = "#D0D0D0" -- Foreground
+
+-- Apply highlight groups for tabs
+
+vim.api.nvim_set_hl(0, "TabLine", { fg = base03, bg = base00 })
+vim.api.nvim_set_hl(0, "TabLineSel", { fg = base05, bg = base00 })
+vim.api.nvim_set_hl(0, "TabLineFill", { bg = base00 })
 

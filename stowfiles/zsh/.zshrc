@@ -48,18 +48,15 @@ alias df='df -h'            # Human-readable sizes
 alias free='free -m'        # Show sizes in MB
 alias mkdir='mkdir -p'      # Make parent dirs as needed
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias ls='ls -FHh --color=auto --group-directories-first'
 alias la='ls -AFHh --color=auto --group-directories-first'
 alias ll='ls -AFHhl --color=auto --group-directories-first'
-alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
+alias grep='rg'
 alias wttr='curl wttr.in'
 alias gpt='chatgpt'
-alias gitup='git add . && git commit && git push'
+alias gitup='git add . && git commit -m "bababooey" && git push'
 alias ytdlp='yt-dlp -f "((bv*[fps>30]/bv*)[height<=1080]/(wv*[fps>30]/wv*)) + ba / (b[fps>30]/b)[height<=1080]/(w[fps>30]/w)" --embed-subs --embed-metadata'
 alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 
@@ -101,12 +98,12 @@ source ~/.config/zsh/vi-mode/vi-mode.zsh
 
 # zsh-autosuggestions
 
-# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^F' autosuggest-accept
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # zsh-syntax-highlighting
 
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

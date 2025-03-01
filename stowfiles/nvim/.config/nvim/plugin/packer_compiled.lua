@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -114,10 +119,20 @@ _G.packer_plugins = {
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
   ["smart-splits.nvim"] = {
     loaded = true,
     path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/smart-splits.nvim",
     url = "https://github.com/mrjones2014/smart-splits.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/ccjr/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-floaterm"] = {
     loaded = true,
