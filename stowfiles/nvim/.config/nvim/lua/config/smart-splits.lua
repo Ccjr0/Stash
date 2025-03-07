@@ -1,3 +1,5 @@
+-- mrjones2014/smart-splits.nvim
+
 -- resizing splits
 
 vim.keymap.set('n', '<C-S-h>', require('smart-splits').resize_left)

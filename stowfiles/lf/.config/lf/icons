@@ -20,8 +20,8 @@
 # fi      -       # FILE
 
 # file types (with matching order)
-ln             # LINK
-or             # ORPHAN
+ln             # LINK
+or             # ORPHAN
 tw      t       # STICKY_OTHER_WRITABLE
 ow      󰉋       # OTHER_WRITABLE
 st      t       # STICKY
@@ -32,7 +32,7 @@ bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
-ex             # EXEC
+ex             # EXEC
 fi             # FILE
 
 # file extensions (vim-devicons)
@@ -74,7 +74,7 @@ fi             # FILE
 *.ini               00;38;2;109;128;134
 *.yml               00;38;2;149;157;165
 *.yaml              00;38;2;149;157;165
-*.toml              00;38;2;109;128;134
+*.toml              #00;38;2;109;128;134
 *.bat               00;38;2;193;241;46
 *.mk                00;38;2;109;128;134
 *.jpg               #00;38;2;160;116;196
@@ -343,40 +343,42 @@ Vagrantfile                 00;38;2;21;99;255
 *.ogx   
 
 # video formats
-*.mp4   
-*.webm  
-*.mkv   
-*.mov   
-*.wmv   
-*.avi   
-*.m4v   
-*.mp4v  
+*.mp4   
+*.webm  
+*.mkv   
+*.mov   
+*.wmv   
+*.avi   
+*.m4v   
+*.mp4v  
 
 # audio formats (extensions from dircolors defaults)
-*.aac   
-*.au    
-*.flac  
-*.m4a   
-*.mid   
-*.midi  
-*.mka   
-*.mp3   
-*.mpc   
-*.ogg   
-*.ra    
-*.wav   
-*.oga   
-*.opus  
-*.spx   
-*.xspf  
+*.aac   󰝚
+*.au    󰝚
+*.flac  󰝚
+*.m4a   󰝚
+*.mid   󰝚
+*.midi  󰝚
+*.mka   󰝚
+*.mp3   󰝚
+*.mpc   󰝚
+*.ogg   󰝚
+*.ra    󰝚
+*.wav   󰝚
+*.oga   󰝚
+*.opus  󰝚
+*.spx   󰝚
+*.xspf  󰝚
 
 # other formats
-*.pdf           00;38;2;179;11;0
-*.docx          00;38;2;81;154;186
-*.xlsx          00;38;2;1;152;51
-*.wad       
-*.godot         00;38;2;81;154;186
-*.iso       
-*.brstm     
-*.gpg       
-*.exe       
+*.pdf               00;38;2;179;11;0
+*.docx              00;38;2;81;154;186
+*.xlsx              00;38;2;1;152;51
+*.wad           
+*.godot             00;38;2;81;154;186
+*.iso           
+*.brstm         󰝚
+*.gpg           󰌾
+*.xrdb          
+*.Xresources    
+*.exe           

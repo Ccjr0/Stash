@@ -1,3 +1,5 @@
+! breeze.xrdb
+
 #define t_background		#232627
 #define t_current_line		#fcfcfc
 #define t_selection      	#cfcfc2

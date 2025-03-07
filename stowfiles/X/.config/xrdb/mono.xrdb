@@ -1,48 +1,56 @@
-#define bg          #1e1e20
-#define fg          #bebec0
-#define black       #323234
-#define red         #f2777a
-#define green       #99cc99
-#define yellow      #ffcc66
-#define blue        #6699cc
-#define magenta     #cc99cc
-#define cyan        #66cccc
-#define white       #bebec0
+! mono.xrdb
 
-! special
-*.foreground:   fg
-*.background:   bg
-*.cursorColor:  white
+#define base00 #1E1E20
+#define base01 #323234
+#define base02 #6E6E70
+#define base03 #BEBEC0
+#define base08 #F2777A
+#define base0B #99CC99
+#define base0A #FFCC66
+#define base0D #6699CC
+#define base0E #CC99CC
+#define base0C #66CCCC
+#define base05 #BEBEC0
+#define base07 #BEBEC0
 
-! black
-*.color0:       black
-*.color8:       #6e6e70
+! Foreground, background, and cursor colors
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
 
-! red
-*.color1:       red
-*.color9:       red
+! Black
+*.color0:  base01
+*.color8:  base02
 
-! green
-*.color2:       green
-*.color10:      green
+! Red
+*.color1:  base08
+*.color9:  base08
 
-! yellow
-*.color3:       yellow
-*.color11:      yellow
+! Green
+*.color2:  base0B
+*.color10: base0B
 
-! blue
-*.color4:       blue
-*.color12:      blue
+! Yellow
+*.color3:  base0A
+*.color11: base0A
 
-! magenta
-*.color5:       magenta
-*.color13:      magenta
+! Blue
+*.color4:  base0D
+*.color12: base0D
 
-! cyan
-*.color6:       cyan
-*.color14:      cyan
+! Magenta
+*.color5:  base0E
+*.color13: base0E
 
-! white
-*.color7:       white
-*.color15:      #dcdcde
+! Cyan
+*.color6:  base0C
+*.color14: base0C
 
+! White
+*.color7:  base05
+*.color15: base07
+
+! Special colors for URxvt
+URxvt*background: base00
+URxvt*foreground: base05
+URxvt*cursorColor: base05

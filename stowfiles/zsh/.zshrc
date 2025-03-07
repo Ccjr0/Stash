@@ -1,19 +1,27 @@
 # zshrc
 
-# === OPTIONS ===
+# ====== OPTIONS ======
 
 setopt autocd extendedglob nomatch histignorealldups
+# precmd() { print -Pn "\e]0;%n@%m: %~\a" }
 
 # History
 
 HISTFILE=$HOME/.histfile
-HISTSIZE=50000
-SAVEHIST=50000
+HISTSIZE=80000
+SAVEHIST=80000
+# export HISTIGNORE="ls:bg:fg:exit:clear:lf:neofetch"
+# export HISTIGNORE_PATTERN="(ls|cd|pwd|tree|exit|clear|lf|neofetch)"
 
-# === PROMPT ===
+# ====== PROMPT ======
 
-PROMPT=' %F{blue}%B%~%b%f %F{gray}%B>>%f%b'
-PROMPT+="%B\$vcs_info_msg_0_%b "
+# SSH condition
+
+if [[ -n "$SSH_CLIENT" || -n "$SSH_TTY" ]]; then
+    SSH_PROMPT="%F{3} %n@%m%f"
+else
+    SSH_PROMPT=""
+fi
 
 # Version control
 
@@ -38,7 +46,13 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats " %{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
 
-# === ALIASES ===
+# Prompt
+
+PROMPT=" %F{blue}%B%~%b%f %F{gray}%B>>%f%b"
+PROMPT+="%B\$vcs_info_msg_0_%b "
+RPROMPT=${SSH_PROMPT}
+
+# ====== ALIASES ======
 
 alias sudo='nocorrect sudo -E '     # 'sudo' alias fix
 
@@ -47,16 +61,13 @@ alias rm='rm -i'            # Confirm before removing something
 alias df='df -h'            # Human-readable sizes
 alias free='free -m'        # Show sizes in MB
 alias mkdir='mkdir -p'      # Make parent dirs as needed
-
 alias ls='ls -FHh --color=auto --group-directories-first'
 alias la='ls -AFHh --color=auto --group-directories-first'
 alias ll='ls -AFHhl --color=auto --group-directories-first'
-alias vi='nvim'
-alias vim='nvim'
+alias v='nvim' vi='nvim' vim='nvim'
 alias grep='rg'
 alias wttr='curl wttr.in'
-alias gpt='chatgpt'
-alias gitup='git add . && git commit -m "bababooey" && git push'
+alias gitup='git add . && git commit && git push'
 alias ytdlp='yt-dlp -f "((bv*[fps>30]/bv*)[height<=1080]/(wv*[fps>30]/wv*)) + ba / (b[fps>30]/b)[height<=1080]/(w[fps>30]/w)" --embed-subs --embed-metadata'
 alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 
@@ -64,7 +75,7 @@ alias ytdlpa='yt-dlp --embed-thumbnail --embed-metadata -x --audio-format mp3'
 # alias ytdl='youtube-dl'
 # alias ytdla='youtube-dl --add-metadata -x --audio-format mp3'
 
-# === COMPLETION ===
+# ====== COMPLETION ======
 
 zstyle :compinstall filename '/home/ccjr/.zshrc'
 autoload -Uz compinit
@@ -90,7 +101,7 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-# === PLUGINS ===
+# ====== PLUGINS ======
 
 # vi-mode
 

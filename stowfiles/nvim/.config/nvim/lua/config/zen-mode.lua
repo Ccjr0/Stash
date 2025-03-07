@@ -1,3 +1,5 @@
+-- folke/zen-mode.nvim
+
 vim.keymap.set('n', '<leader>r', ':ZenMode<CR>', { silent = true })
 
 require('zen-mode').setup({

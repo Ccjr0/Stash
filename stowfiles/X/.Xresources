@@ -2,7 +2,7 @@
 
 !! Theme
 
-#include ".config/xrdb/apprentice.xrdb"
+#include ".config/xrdb/base16-default-dark.xrdb"
 
 !! Fonts
 

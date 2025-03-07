@@ -1,0 +1,82 @@
+[/]
+custom-list=['custom2', 'custom3', 'custom1', 'custom4', 'custom0']
+looking-glass-keybinding=@as []
+magnifier-zoom-in=@as []
+magnifier-zoom-out=@as []
+show-desklets=@as []
+
+[custom-keybindings/custom0]
+binding=['<Primary><Alt>Escape']
+command='xkill'
+name='Xkill'
+
+[custom-keybindings/custom1]
+binding=@as []
+command='alacritty -e lf'
+name='Lf'
+
+[custom-keybindings/custom2]
+binding=['<Super>backslash']
+command="notify-send 'mega faggot'"
+name='test1'
+
+[custom-keybindings/custom3]
+binding=['<Shift><Super>parenleft']
+command="notify-send 'robo bitch'"
+name='test2'
+
+[custom-keybindings/custom4]
+binding=@as []
+command='alacritty -e nvim'
+name='Neovim'
+
+[media-keys]
+area-screenshot=['<Shift>Print', '<Super>s']
+media=['XF86AudioMedia']
+next=['XF86AudioNext', '<Super>n']
+pause=['XF86AudioPause']
+play=['XF86AudioPlay', '<Super>period']
+previous=['XF86AudioPrev', '<Super>p']
+restart-cinnamon=['<Alt><Super>F12']
+screen-brightness-down=['XF86MonBrightnessDown', '<Shift><Super>underscore']
+screen-brightness-up=['XF86MonBrightnessUp', '<Shift><Super>plus']
+screenreader=@as []
+screensaver=['XF86ScreenSaver']
+stop=['XF86AudioStop']
+terminal=['<Super>Return']
+video-rotation-lock=@as []
+volume-down=['XF86AudioLowerVolume', '<Super>minus']
+volume-mute=['XF86AudioMute', '<Super>m']
+volume-up=['XF86AudioRaiseVolume', '<Super>equal']
+window-screenshot=['<Alt>Print', '<Shift><Super>s']
+www=['XF86WWW', '<Super>b']
+
+[wm]
+activate-window-menu=@as []
+begin-move=@as []
+begin-resize=@as []
+close=['<Alt>F4', '<Super>q']
+minimize=['<Super>x']
+move-to-center=['<Super>c']
+move-to-monitor-down=['<Shift><Super>j']
+move-to-monitor-left=['<Shift><Super>h']
+move-to-monitor-right=['<Shift><Super>l']
+move-to-monitor-up=['<Shift><Super>k']
+move-to-workspace-left=['<Shift><Super>colon']
+move-to-workspace-right=['<Shift><Super>quotedbl']
+push-tile-left=['<Super>bracketleft']
+push-tile-right=['<Super>bracketright']
+switch-monitor=['XF86Display']
+switch-panels=['<Control><Alt>Tab', '<Alt><Super>w']
+switch-panels-backward=['<Shift><Control><Alt>Tab', '<Shift><Alt><Super>w']
+switch-to-workspace-down=@as []
+switch-to-workspace-left=['<Super>semicolon']
+switch-to-workspace-right=['<Super>apostrophe']
+switch-to-workspace-up=['<Alt>F1']
+switch-windows=['<Alt>Tab', '<Super>w']
+switch-windows-backward=['<Shift><Alt>Tab', '<Shift><Super>w']
+toggle-above=@as []
+toggle-fullscreen=['<Super>F11']
+toggle-maximized=['<Super>z']
+toggle-on-all-workspaces=@as []
+toggle-recording=['<Shift><Super>r']

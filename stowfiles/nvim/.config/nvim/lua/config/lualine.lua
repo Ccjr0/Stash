@@ -1,3 +1,7 @@
+-- nvim-lualine/lualine.nvim
+
+requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+
 require("lualine").setup({
   options = {
     icons_enabled = true,
@@ -13,9 +17,9 @@ require("lualine").setup({
     always_show_tabline = true,
     globalstatus = false,
     refresh = {
-      statusline = 20,
-      tabline = 20,
-      winbar = 20,
+      statusline = 10,
+      tabline = 10,
+      winbar = 10,
     },
   },
   sections = {
